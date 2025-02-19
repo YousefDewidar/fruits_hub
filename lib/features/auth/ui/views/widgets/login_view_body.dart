@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
@@ -18,14 +20,16 @@ class LoginViewBody extends StatefulWidget {
 }
 
 class _LoginViewBodyState extends State<LoginViewBody> {
-  late TextEditingController _emailCon;
-  late TextEditingController _passCon;
+  final TextEditingController _emailCon = TextEditingController();
+  final TextEditingController _passCon = TextEditingController();
+  final formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   @override
-  void initState() {
-    _emailCon = TextEditingController();
-    _passCon = TextEditingController();
-    super.initState();
+  void dispose() {
+    _emailCon.dispose();
+    _passCon.dispose();
+    super.dispose();
   }
 
   @override
@@ -33,33 +37,44 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: kHoripadding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SpaceV(10),
-            CustomTextField(controller: _emailCon, hint: S.of(context).email),
-            const SpaceV(16),
-            PasswordField(controller: _passCon),
-            const SpaceV(8),
-            const ForgetPasswordTextButton(),
-            const SpaceV(30),
-            CustomButton(onPressed: () {}, title: S.of(context).login),
-            const SpaceV(26),
-            const DontHaveAcc(),
-            const SpaceV(28),
-            const OrDivider(),
-            const SpaceV(16),
-            const SocialLoginList(),
-          ],
+        child: Form(
+          key: formKey,
+          autovalidateMode: autovalidateMode,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SpaceV(10),
+              CustomTextField(
+                controller: _emailCon,
+                hint: S.of(context).email,
+              ),
+              const SpaceV(16),
+              PasswordField(
+                controller: _passCon,
+              ),
+              const SpaceV(8),
+              const ForgetPasswordTextButton(),
+              const SpaceV(30),
+              CustomButton(
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+                title: S.of(context).login,
+              ),
+              const SpaceV(26),
+              const DontHaveAcc(),
+              const SpaceV(28),
+              const OrDivider(),
+              const SpaceV(16),
+              const SocialLoginList(),
+            ],
+          ),
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _emailCon.dispose();
-    _passCon.dispose();
-    super.dispose();
   }
 }
