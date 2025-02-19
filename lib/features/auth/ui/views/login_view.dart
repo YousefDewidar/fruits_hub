@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login_view_body.dart';
+import 'package:fruits_hub/generated/l10n.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -8,12 +10,8 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'تسجيل دخول',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          backgroundColor: Colors.white,
+          title: Text(S.of(context).login, style: TextStyles.bold19),
           centerTitle: true,
         ),
         body: const SafeArea(child: LoginViewBody()));

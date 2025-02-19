@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
+import 'package:fruits_hub/generated/l10n.dart';
 
 class DontHaveAcc extends StatelessWidget {
   const DontHaveAcc({
@@ -11,20 +13,20 @@ class DontHaveAcc extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Text(
+          S.of(context).dontHaveAccount1,
+          style: TextStyles.semiBold16.copyWith(color: AppColors.greyColor),
+        ),
         TextButton(
           onPressed: () {},
           style: const ButtonStyle(
               padding:
-                  WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 3))),
-          child: const Text(
-            'قم بإنشاء حساب',
-            style: TextStyles.regular22,
-          ),
-        ),
-        Text(
-          'لا تمتلك حساب؟',
-          style: TextStyles.regular22.copyWith(
-            color: Colors.grey,
+                  WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 5))),
+          child: Text(
+            S.of(context).dontHaveAccount2,
+            style: TextStyles.semiBold16.copyWith(
+              color: AppColors.primaryColor,
+            ),
           ),
         ),
       ],

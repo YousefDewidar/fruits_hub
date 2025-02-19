@@ -49,6 +49,116 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dontHaveAccount1 {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAccount1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get dontHaveAccount2 {
+    return Intl.message(
+      'Sign Up',
+      name: 'dontHaveAccount2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or`
+  String get or {
+    return Intl.message(
+      'Or',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Facebook`
+  String get face {
+    return Intl.message(
+      'Sign in with Facebook',
+      name: 'face',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Google`
+  String get google {
+    return Intl.message(
+      'Sign in with Google',
+      name: 'google',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with Apple`
+  String get apple {
+    return Intl.message(
+      'Sign in with Apple',
+      name: 'apple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get required {
+    return Intl.message(
+      'This field is required',
+      name: 'required',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

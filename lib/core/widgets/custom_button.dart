@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
         backgroundColor: WidgetStatePropertyAll(
           AppColors.primaryColor,
         ),
-        fixedSize: WidgetStatePropertyAll(Size.fromHeight(55)),
+        fixedSize: WidgetStatePropertyAll(Size.fromHeight(59)),
         shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
@@ -31,8 +31,8 @@ class CustomButton extends StatelessWidget {
       child: Text(
         title,
         textAlign: TextAlign.end,
-        style: TextStyles.regular16.copyWith(
-          color: const Color(0xEEFFFFFF),
+        style: TextStyles.bold16.copyWith(
+          color: Colors.white,
         ),
       ),
     );

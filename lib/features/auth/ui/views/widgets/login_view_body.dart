@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/core/utils/app_colors.dart';
-import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/custom_text_field.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/dont_have_acc.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/forget_pass_text_button.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/or_divider.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/password_field.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/social_login_list.dart';
+import 'package:fruits_hub/generated/l10n.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -34,30 +37,19 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const SpaceV(10),
-            CustomTextField(
-              controller: _emailCon,
-              hint: 'البريد الالكتروني',
-            ),
+            CustomTextField(controller: _emailCon, hint: S.of(context).email),
             const SpaceV(16),
-            CustomTextField(
-              controller: _emailCon,
-              hint: 'كلمة المرور',
-            ),
-            const SpaceV(10),
-            Text(
-              'نسيت كلمة المرور؟',
-              textAlign: TextAlign.end,
-              style: TextStyles.regular22.copyWith(
-                color: AppColors.lightPrimaryColor,
-              ),
-            ),
-            const SpaceV(25),
-            CustomButton(
-              onPressed: () {},
-              title: 'تسجيل دخول',
-            ),
-            const SpaceV(20),
+            PasswordField(controller: _passCon),
+            const SpaceV(8),
+            const ForgetPasswordTextButton(),
+            const SpaceV(30),
+            CustomButton(onPressed: () {}, title: S.of(context).login),
+            const SpaceV(26),
             const DontHaveAcc(),
+            const SpaceV(28),
+            const OrDivider(),
+            const SpaceV(16),
+            const SocialLoginList(),
           ],
         ),
       ),

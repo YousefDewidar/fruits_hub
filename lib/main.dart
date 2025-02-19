@@ -16,6 +16,9 @@ class FruitsHub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'cairo',
+      scaffoldBackgroundColor: Colors.white
+      ),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -24,7 +27,6 @@ class FruitsHub extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       locale: const Locale('ar'),
-      theme: ThemeData(fontFamily: 'Cairo'),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
       initialRoute: Routes.login,
