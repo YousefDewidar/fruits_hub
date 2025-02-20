@@ -4,4 +4,6 @@ abstract class Routes {
   static const login = 'login';
   static const signUp = 'signUp';
   static const forgetPass = 'forgetPass';
+  static const verify = 'verify';
+  static const newPass = 'newPass';
 }

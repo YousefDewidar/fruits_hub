@@ -50,6 +50,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "termCon1": MessageLookupByLibrary.simpleMessage(
             "من خلال إنشاء حساب ، فإنك توافق على"),
         "termCon2":
-            MessageLookupByLibrary.simpleMessage("الشروط والأحكام الخاصة بنا")
+            MessageLookupByLibrary.simpleMessage("الشروط والأحكام الخاصة بنا"),
+        "verifyAgain":
+            MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
+        "verifyAppbar": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
+        "verifyBody": MessageLookupByLibrary.simpleMessage(
+            "أدخل الرمز الذي أرسلناه إلى عنوان بريد التالي"),
+        "verifyButton": MessageLookupByLibrary.simpleMessage("تحقق من الرمز")
       };
 }

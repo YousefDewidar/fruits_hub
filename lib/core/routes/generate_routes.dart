@@ -3,6 +3,7 @@ import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/features/auth/ui/views/forget_pass_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/login_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/signup_view.dart';
+import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
 import 'package:fruits_hub/features/splash/ui/views/splash_view.dart';
 
 Route<dynamic>? onGenerateRoute(RouteSettings setting) {
@@ -15,6 +16,11 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const SignupView());
     case Routes.forgetPass:
       return MaterialPageRoute(builder: (context) => const ForgetPassView());
+    case Routes.verify:
+      return MaterialPageRoute(builder: (context) => const VerifyCodeView());
+    case Routes.newPass:
+      return MaterialPageRoute(builder: (context) => const NewPassView());
+
     default:
       return null;
   }

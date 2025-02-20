@@ -249,6 +249,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Verify Code`
+  String get verifyAppbar {
+    return Intl.message(
+      'Verify Code',
+      name: 'verifyAppbar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the code we sent to your email address`
+  String get verifyBody {
+    return Intl.message(
+      'Enter the code we sent to your email address',
+      name: 'verifyBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify Code`
+  String get verifyButton {
+    return Intl.message(
+      'Verify Code',
+      name: 'verifyButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend Code`
+  String get verifyAgain {
+    return Intl.message(
+      'Resend Code',
+      name: 'verifyAgain',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
