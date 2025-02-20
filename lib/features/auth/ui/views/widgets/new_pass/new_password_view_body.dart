@@ -1,10 +1,15 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
+import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/password_field.dart';
 import 'package:fruits_hub/generated/l10n.dart';
+import 'package:svg_flutter/svg.dart';
 
 class NewPasswordViewBody extends StatefulWidget {
   const NewPasswordViewBody({super.key});
@@ -50,11 +55,42 @@ class _NewPasswordViewBodyState extends State<NewPasswordViewBody> {
             const SpaceV(30),
             CustomButton(
               title: S.of(context).newPassButton,
-              onPressed: () {},
+              onPressed: () {
+                successDialog(context);
+                Future.delayed(const Duration(seconds: 2), () {
+                  Navigator.pop(context);
+                  Navigator.pushReplacementNamed(context, Routes.login);
+                });
+              },
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Future<dynamic> successDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Padding(
+            padding: const EdgeInsets.all(35.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgPicture.asset(Assets.imagesDone),
+                const SizedBox(height: 30),
+                Text(
+                  S.of(context).newPassDone,
+                  style: TextStyles.bold16,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

@@ -26,5 +26,6 @@
   "newPassAppbar": "New Password",
   "newPassButton": "Change Password",
   "newPassBody": "Create a new password to log in",
-  "confirmPass": "Confirm "
+  "confirmPass": "Confirm ",
+  "newPassDone": "Password changed successfully"
 }

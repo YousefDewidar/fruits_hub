@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول"),
         "newPassButton":
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+        "newPassDone":
+            MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),

@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Create a new password to log in"),
         "newPassButton":
             MessageLookupByLibrary.simpleMessage("Change Password"),
+        "newPassDone": MessageLookupByLibrary.simpleMessage(
+            "Password changed successfully"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "required":

@@ -26,5 +26,7 @@
   "newPassAppbar": "كلمة مرور جديدة",
   "newPassButton": "تغيير كلمة المرور",
   "newPassBody": "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول",
-  "confirmPass": "تاكيد "
+  "confirmPass": "تاكيد ",
+
+  "newPassDone": "تم تغيير كلمة المرور بنجاح"
 }
