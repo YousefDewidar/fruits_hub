@@ -46,7 +46,7 @@ class _VerifyCodeViewBodyState extends State<VerifyCodeViewBody> {
             CustomButton(
                 title: S.of(context).verifyButton,
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, Routes.login);
+                  Navigator.pushReplacementNamed(context, Routes.newPass);
                 }),
             const SpaceV(25),
             Align(

@@ -6,11 +6,12 @@ import 'package:fruits_hub/generated/l10n.dart';
 class PasswordField extends StatefulWidget {
   final TextEditingController controller;
   final void Function(String?)? onSaved;
-
+  final String title;
   const PasswordField({
     super.key,
     required this.controller,
     this.onSaved,
+    this.title = '',
   });
 
   @override
@@ -34,7 +35,7 @@ class _PasswordFieldState extends State<PasswordField> {
       style: TextStyles.semiBold16,
       obscureText: _obscureText,
       decoration: InputDecoration(
-        hintText: S.of(context).password,
+        hintText: "${widget.title}${S.of(context).password}",
         hintStyle: TextStyles.bold13.copyWith(color: AppColors.greyColor),
         suffixIcon: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18.0),

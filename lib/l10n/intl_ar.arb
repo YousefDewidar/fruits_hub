@@ -22,5 +22,9 @@
   "verifyAppbar": "التحقق من الرمز",
   "verifyBody": "أدخل الرمز الذي أرسلناه إلى عنوان بريد التالي",
   "verifyButton": "تحقق من الرمز",
-  "verifyAgain": "إعادة إرسال الرمز"
+  "verifyAgain": "إعادة إرسال الرمز",
+  "newPassAppbar": "كلمة مرور جديدة",
+  "newPassButton": "تغيير كلمة المرور",
+  "newPassBody": "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول",
+  "confirmPass": "تاكيد "
 }

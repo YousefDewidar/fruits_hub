@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "allreadyhaveAccount":
             MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟"),
         "apple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة ابل"),
+        "confirmPass": MessageLookupByLibrary.simpleMessage("تاكيد "),
         "createAcc": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
         "dontHaveAccount1":
             MessageLookupByLibrary.simpleMessage("لا تملك حساب؟"),
@@ -43,6 +44,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "google": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "newPassAppbar":
+            MessageLookupByLibrary.simpleMessage("كلمة مرور جديدة"),
+        "newPassBody": MessageLookupByLibrary.simpleMessage(
+            "قم بإنشاء كلمة مرور جديدة لتسجيل الدخول"),
+        "newPassButton":
+            MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),

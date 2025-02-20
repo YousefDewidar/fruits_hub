@@ -22,5 +22,9 @@
   "verifyAppbar": "Verify Code",
   "verifyBody": "Enter the code we sent to your email address",
   "verifyButton": "Verify Code",
-  "verifyAgain": "Resend Code"
+  "verifyAgain": "Resend Code",
+  "newPassAppbar": "New Password",
+  "newPassButton": "Change Password",
+  "newPassBody": "Create a new password to log in",
+  "confirmPass": "Confirm "
 }

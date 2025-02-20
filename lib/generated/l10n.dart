@@ -289,6 +289,46 @@ class S {
       args: [],
     );
   }
+
+  /// `New Password`
+  String get newPassAppbar {
+    return Intl.message(
+      'New Password',
+      name: 'newPassAppbar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get newPassButton {
+    return Intl.message(
+      'Change Password',
+      name: 'newPassButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create a new password to log in`
+  String get newPassBody {
+    return Intl.message(
+      'Create a new password to log in',
+      name: 'newPassBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm `
+  String get confirmPass {
+    return Intl.message(
+      'Confirm ',
+      name: 'confirmPass',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

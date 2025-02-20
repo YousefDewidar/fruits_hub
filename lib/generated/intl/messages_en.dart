@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "allreadyhaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "apple": MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
+        "confirmPass": MessageLookupByLibrary.simpleMessage("Confirm "),
         "createAcc":
             MessageLookupByLibrary.simpleMessage("Create a new account"),
         "dontHaveAccount1":
@@ -43,6 +44,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "newPassAppbar": MessageLookupByLibrary.simpleMessage("New Password"),
+        "newPassBody": MessageLookupByLibrary.simpleMessage(
+            "Create a new password to log in"),
+        "newPassButton":
+            MessageLookupByLibrary.simpleMessage("Change Password"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "required":
