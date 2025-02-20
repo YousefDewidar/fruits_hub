@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/generated/l10n.dart';
@@ -15,7 +16,9 @@ class ForgetPasswordTextButton extends StatelessWidget {
           ? Alignment.centerLeft
           : Alignment.centerRight,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, Routes.forgetPass);
+        },
         child: Text(
           S.of(context).forgotPassword,
           textAlign: TextAlign.end,

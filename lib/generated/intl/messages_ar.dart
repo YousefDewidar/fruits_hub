@@ -32,6 +32,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "face": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة فيسبوك"),
+        "forgetPass3": MessageLookupByLibrary.simpleMessage(
+            "لا تقلق ، ما عليك سوى كتابة بريدك الإلكتروني وسنرسل رمز التحقق."),
+        "forgetPassAppbar":
+            MessageLookupByLibrary.simpleMessage("نسيان كلمة المرور"),
+        "forgetPassButton":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),

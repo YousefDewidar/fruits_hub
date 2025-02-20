@@ -32,6 +32,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAccount2": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "face": MessageLookupByLibrary.simpleMessage("Sign in with Facebook"),
+        "forgetPass3": MessageLookupByLibrary.simpleMessage(
+            "Don\'t worry, just enter your email address and we will send you a verification code."),
+        "forgetPassAppbar":
+            MessageLookupByLibrary.simpleMessage("Forget Password"),
+        "forgetPassButton":
+            MessageLookupByLibrary.simpleMessage("Forget Password"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),

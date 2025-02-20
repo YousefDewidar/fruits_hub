@@ -219,6 +219,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Forget Password`
+  String get forgetPassAppbar {
+    return Intl.message(
+      'Forget Password',
+      name: 'forgetPassAppbar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password`
+  String get forgetPassButton {
+    return Intl.message(
+      'Forget Password',
+      name: 'forgetPassButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't worry, just enter your email address and we will send you a verification code.`
+  String get forgetPass3 {
+    return Intl.message(
+      'Don\'t worry, just enter your email address and we will send you a verification code.',
+      name: 'forgetPass3',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
