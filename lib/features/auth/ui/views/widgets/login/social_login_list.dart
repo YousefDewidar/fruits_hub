@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
-import 'package:fruits_hub/features/auth/ui/views/widgets/social_login_card.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/login/social_login_card.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class SocialLoginList extends StatelessWidget {

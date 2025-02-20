@@ -31,6 +31,7 @@ class _PasswordFieldState extends State<PasswordField> {
         return null;
       },
       onSaved: widget.onSaved,
+      style: TextStyles.semiBold16,
       obscureText: _obscureText,
       decoration: InputDecoration(
         hintText: S.of(context).password,

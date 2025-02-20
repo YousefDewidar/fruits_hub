@@ -28,6 +28,8 @@ class CustomTextField extends StatelessWidget {
         return null;
       },
       onSaved: onSaved,
+
+      style: TextStyles.semiBold16,
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: TextStyles.bold13.copyWith(color: AppColors.greyColor),

@@ -1,15 +1,13 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
-import 'package:fruits_hub/features/auth/ui/views/widgets/custom_text_field.dart';
-import 'package:fruits_hub/features/auth/ui/views/widgets/dont_have_acc.dart';
-import 'package:fruits_hub/features/auth/ui/views/widgets/forget_pass_text_button.dart';
-import 'package:fruits_hub/features/auth/ui/views/widgets/or_divider.dart';
-import 'package:fruits_hub/features/auth/ui/views/widgets/password_field.dart';
-import 'package:fruits_hub/features/auth/ui/views/widgets/social_login_list.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/login/custom_text_field.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/login/dont_have_acc.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/login/forget_pass_text_button.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/login/or_divider.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/login/password_field.dart';
+import 'package:fruits_hub/features/auth/ui/views/widgets/login/social_login_list.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class LoginViewBody extends StatefulWidget {
@@ -54,7 +52,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               ),
               const SpaceV(8),
               const ForgetPasswordTextButton(),
-              const SpaceV(30),
+              const SpaceV(25),
               CustomButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {

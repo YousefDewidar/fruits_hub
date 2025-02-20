@@ -22,7 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "allreadyhaveAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "apple": MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
+        "createAcc":
+            MessageLookupByLibrary.simpleMessage("Create a new account"),
         "dontHaveAccount1":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "dontHaveAccount2": MessageLookupByLibrary.simpleMessage("Sign Up"),
@@ -30,11 +34,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "face": MessageLookupByLibrary.simpleMessage("Sign in with Facebook"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "required":
-            MessageLookupByLibrary.simpleMessage("This field is required")
+            MessageLookupByLibrary.simpleMessage("This field is required"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "termCon1": MessageLookupByLibrary.simpleMessage(
+            "By creating an account, you agree to"),
+        "termCon2": MessageLookupByLibrary.simpleMessage("Terms & Conditions")
       };
 }

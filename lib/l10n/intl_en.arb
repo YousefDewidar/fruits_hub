@@ -9,5 +9,11 @@
   "face": "Sign in with Facebook",
   "google": "Sign in with Google",
   "apple": "Sign in with Apple",
-  "required": "This field is required"
+  "required": "This field is required",
+  "createAcc": "Create a new account",
+  "signUp": "Sign Up",
+  "fullName": "Full Name",
+  "termCon1": "By creating an account, you agree to",
+  "termCon2": "Terms & Conditions",
+  "allreadyhaveAccount": "Already have an account?"
 }
