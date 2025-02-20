@@ -57,7 +57,15 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               const SpaceV(16),
               const TermsAndCond(),
               const SpaceV(30),
-              CustomButton(title: S.of(context).createAcc, onPressed: () {}),
+              CustomButton(
+                  title: S.of(context).createAcc,
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  }),
               const SpaceV(30),
               const AllreadyHaveAcc(),
             ],

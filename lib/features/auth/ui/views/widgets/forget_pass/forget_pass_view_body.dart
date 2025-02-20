@@ -52,7 +52,12 @@ class _ForgetPassViewBodyState extends State<ForgetPassViewBody> {
               CustomButton(
                 title: S.of(context).forgetPassButton,
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, Routes.verify);
+                  if (formKey.currentState!.validate()) {
+                    Navigator.pushReplacementNamed(context, Routes.verify);
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
                 },
               )
             ],

@@ -25,6 +25,7 @@ class OtpWidget extends StatelessWidget {
             decoration: InputDecoration(
               filled: true,
               fillColor: const Color(0xffF9FAFA),
+              errorStyle: const TextStyle(height: .05),
               border: customBorder(),
               enabledBorder: customBorder(),
               focusedBorder: const OutlineInputBorder(
@@ -41,6 +42,12 @@ class OtpWidget extends StatelessWidget {
               if (value.length == 1 && index < 3) {
                 FocusScope.of(context).nextFocus();
               }
+            },
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return '';
+              }
+              return null;
             },
           ),
         );
