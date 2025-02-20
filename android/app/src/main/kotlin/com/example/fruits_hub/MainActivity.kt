@@ -1,4 +1,4 @@
-package com.yousef.fruits_hub
+package com.yousef.fru
 
 import io.flutter.embedding.android.FlutterActivity
 
