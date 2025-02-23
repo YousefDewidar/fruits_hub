@@ -13,11 +13,17 @@ abstract class AuthRepo {
     required String password,
   });
 
+  Future<Either<Failuer, void>> signOut();
+
+  Future<Either<Failuer, String>> verifyEmail({required String email});
+
+  Future<Either<Failuer, void>> resetPassword({required String email});
+
+  Future<Either<Failuer, void>> updatePassword({required String newPassword});
+
   signInWithGoogle();
 
   signInWithApple();
 
   signInWithFacebook();
-
-  signOut();
 }
