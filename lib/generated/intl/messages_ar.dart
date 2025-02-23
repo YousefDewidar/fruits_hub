@@ -67,7 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verifyAppbar":
             MessageLookupByLibrary.simpleMessage("التحقق من البريد الإلكتروني"),
         "verifyBody": MessageLookupByLibrary.simpleMessage(
-            "أدخل الرمز الذي أرسلناه إلى عنوان بريد التالي"),
+            "أدخل الرمز الذي أرسلناه إلى عنوان البريد التالي"),
         "verifyButton": MessageLookupByLibrary.simpleMessage("تحقق من الرمز")
       };
 }

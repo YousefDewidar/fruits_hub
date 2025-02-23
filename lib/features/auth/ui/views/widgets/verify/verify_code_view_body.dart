@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/core/routes/routes.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
+import 'package:fruits_hub/features/auth/ui/managers/verify/verify_cubit.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/verify/otp_widget.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class VerifyCodeViewBody extends StatefulWidget {
-  const VerifyCodeViewBody({super.key});
+  const VerifyCodeViewBody({super.key, required this.email});
+  final String email;
 
   @override
   State<VerifyCodeViewBody> createState() => _VerifyCodeViewBodyState();
@@ -20,6 +22,11 @@ class _VerifyCodeViewBodyState extends State<VerifyCodeViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final List<TextEditingController> _otpControllers =
       List.generate(6, (_) => TextEditingController());
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -42,7 +49,7 @@ class _VerifyCodeViewBodyState extends State<VerifyCodeViewBody> {
             children: [
               const SpaceV(10),
               Text(
-                '${S.of(context).verifyBody} yous******@gmail.com',
+                '${S.of(context).verifyBody} ${widget.email}',
                 style:
                     TextStyles.semiBold16.copyWith(color: AppColors.greyColor),
               ),
@@ -53,7 +60,12 @@ class _VerifyCodeViewBodyState extends State<VerifyCodeViewBody> {
                   title: S.of(context).verifyButton,
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      Navigator.pushReplacementNamed(context, Routes.newPass);
+                      final code =
+                          _otpControllers.map((code) => code.text).join();
+                      context.read<VerifyCubit>().verifyEmail(
+                            code: code,
+                            email: widget.email,
+                          );
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
@@ -63,7 +75,11 @@ class _VerifyCodeViewBodyState extends State<VerifyCodeViewBody> {
               Align(
                 alignment: Alignment.center,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.read<VerifyCubit>().resendOtp(
+                          email: widget.email,
+                        );
+                  },
                   child: Text(
                     S.of(context).verifyAgain,
                     textAlign: TextAlign.end,

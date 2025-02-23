@@ -1,3 +1,4 @@
+
 import 'package:dartz/dartz.dart';
 import 'package:fruits_hub/core/errors/custom_exception.dart';
 import 'package:fruits_hub/core/supabase/supabase_auth_services.dart';
@@ -86,11 +87,27 @@ class SupabaseRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failuer, void>> verifyEmail({required String code}) async {
+  Future<Either<Failuer, void>> verifyEmail(
+      {required String code, required String email}) async {
     try {
       await SupabaseAuthServices.verifyEmail(
         code: code,
+        email: email,
       );
+      return right(null);
+    } catch (e) {
+      if (e is AuthException) {
+        return left(Failuer(message: e.message));
+      }
+      return left(Failuer(message: 'حدث خطأ ما حاول مرة أخرى'));
+    }
+  }
+
+  @override
+  Future<Either<Failuer, void>> resendOtp({required String email}) async {
+    try {
+      await SupabaseAuthServices.resendOtp(email: email);
+
       return right(null);
     } catch (e) {
       if (e is AuthException) {

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -43,11 +41,21 @@ class SupabaseAuthServices {
 
   static Future<void> verifyEmail({
     required String code,
+    required String email,
   }) async {
     await supabase.auth.verifyOTP(
       type: OtpType.email,
-      email: supabase.auth.currentUser!.email!,
+      email: email,
       token: code,
+    );
+  }
+
+  static Future<void> resendOtp({
+    required String email,
+  }) async {
+    await supabase.auth.resend(
+      type: OtpType.signup,
+      email: email,
     );
   }
 

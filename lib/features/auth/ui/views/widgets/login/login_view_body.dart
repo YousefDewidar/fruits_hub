@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/auth/ui/managers/login/login_cubit.dart';
+import 'package:fruits_hub/features/auth/ui/managers/login/login_state.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/custom_text_field.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/dont_have_acc.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/forget_pass_text_button.dart';
@@ -55,19 +57,28 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               const SpaceV(8),
               const ForgetPasswordTextButton(),
               const SpaceV(25),
-              CustomButton(
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    context.read<LoginCubit>().loginWithEmailAndPassword(
-                          email: _emailCon.text,
-                          password: _passCon.text,
-                        );
-                  } else {
-                    autovalidateMode = AutovalidateMode.always;
-                    setState(() {});
+              BlocListener<LoginCubit, LoginState>(
+                listener: (context, state) {
+                  if (state is LoginFailure) {
+                    if (state.message == "Email not confirmed") {
+                      Navigator.pushNamed(context, Routes.verify);
+                    }
                   }
                 },
-                title: S.of(context).login,
+                child: CustomButton(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      context.read<LoginCubit>().loginWithEmailAndPassword(
+                            email: _emailCon.text,
+                            password: _passCon.text,
+                          );
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  },
+                  title: S.of(context).login,
+                ),
               ),
               const SpaceV(26),
               const DontHaveAcc(),

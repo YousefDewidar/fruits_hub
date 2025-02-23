@@ -29,5 +29,13 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
 
+    sendCodeToEmail({required String email}) async {
+  
+
+      await authRepo.resetPassword(email: email);
+    
+    }
+  
+
   
 }

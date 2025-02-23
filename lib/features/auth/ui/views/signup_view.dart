@@ -20,14 +20,7 @@ class SignupView extends StatelessWidget {
       create: (context) => SignupCubit(getIt.get<AuthRepo>()),
       child: BlocConsumer<SignupCubit, SignupState>(
         listener: (context, state) {
-          if (state is SignupSuccess) {
-            showNotification(
-              context,
-              S.of(context).signupSuccess,
-              NotiType.success,
-            );
-            Navigator.pop(context);
-          } else if (state is SignupFailure) {
+          if (state is SignupFailure) {
             showNotification(context, state.message, NotiType.error);
           }
         },

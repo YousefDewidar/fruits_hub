@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+import 'package:fruits_hub/core/widgets/in_app_notification.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/auth/ui/managers/signup/signup_cubit.dart';
 import 'package:fruits_hub/features/auth/ui/managers/signup/signup_state.dart';
+import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/custom_text_field.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/password_field.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/signup/allready_have_acc.dart';
@@ -60,7 +62,24 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               const SpaceV(16),
               const TermsAndCond(),
               const SpaceV(30),
-              BlocBuilder<SignupCubit, SignupState>(
+              BlocConsumer<SignupCubit, SignupState>(
+                listener: (context, state) {
+                  if (state is SignupSuccess) {
+                    showNotification(
+                      context,
+                      S.of(context).signupSuccess,
+                      NotiType.success,
+                    );
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VerifyCodeView(
+                          email: _emailCon.text,
+                        ),
+                      ),
+                    );
+                  }
+                },
                 builder: (context, state) {
                   return CustomButton(
                     isEnabled: isTermsEnabeld(state),

@@ -19,7 +19,8 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
     case Routes.forgetPass:
       return MaterialPageRoute(builder: (context) => const ForgetPassView());
     case Routes.verify:
-      return MaterialPageRoute(builder: (context) => const VerifyCodeView());
+      return MaterialPageRoute(
+          builder: (context) => const VerifyCodeView(email: ''));
     case Routes.newPass:
       return MaterialPageRoute(builder: (context) => const NewPasswordView());
     case Routes.landing:
