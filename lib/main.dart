@@ -6,13 +6,19 @@ import 'package:fruits_hub/core/helper/di.dart';
 import 'package:fruits_hub/core/helper/simple_bloc_observer.dart';
 import 'package:fruits_hub/core/routes/generate_routes.dart';
 import 'package:fruits_hub/core/routes/routes.dart';
+import 'package:fruits_hub/core/supabase/ksupabase.dart';
 import 'package:fruits_hub/firebase_options.dart';
 import 'package:fruits_hub/generated/l10n.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await Supabase.initialize(
+    url: kSupabaseUrl,
+    anonKey: kSupabaseAnonKey,
   );
   Bloc.observer = SimpleBlocObserver();
   await initSharedPref();
