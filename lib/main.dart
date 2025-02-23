@@ -15,6 +15,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Bloc.observer = SimpleBlocObserver();
+  await initSharedPref();
   setupLocator();
   runApp(const FruitsHub());
 }
@@ -37,7 +38,7 @@ class FruitsHub extends StatelessWidget {
       locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: Routes.login,
+      initialRoute: Routes.splash,
     );
   }
 }

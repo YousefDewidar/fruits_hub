@@ -1,21 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/helper/di.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
+import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:svg_flutter/svg.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(seconds: 2), () {
+      if (mounted) {
+        bool seenLanding = pref.getBool("viewLanding") ?? false;
+        Navigator.pushReplacementNamed(
+          context,
+          seenLanding ? Routes.login : Routes.landing,
+        );
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.asset('assets/egypt.png', height: 180),
+          SvgPicture.asset(Assets.imagesPlant,
+              height: 180, alignment: Alignment.topLeft),
           Align(
             alignment: Alignment.center,
-            child: Image.asset('assets/egypt.png', height: 180),
+            child: SvgPicture.asset(Assets.imagesLogo, height: 180),
           ),
-          Image.asset('assets/egypt.png', height: 180),
+          SvgPicture.asset(Assets.imagesSplashBottom, height: 180),
         ],
       ),
     );
