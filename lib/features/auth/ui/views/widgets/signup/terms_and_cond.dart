@@ -12,28 +12,36 @@ class TermsAndCond extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const CustomCheckBox(),
-        const SpaceH(16),
-        Expanded(
-          child: Text(
-            S.of(context).termCon1,
-            style: TextStyles.semiBold13.copyWith(
-              color: const Color(0xff949D9E),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Text(
-            S.of(context).termCon2,
-            style: TextStyles.semiBold13.copyWith(
-              color: AppColors.primaryColor,
-            ),
-          ),
-        ),
+        CustomCheckBox(),
+        SpaceH(16),
+        Expanded(child: TermsText()),
       ],
     );
+  }
+}
+
+class TermsText extends StatelessWidget {
+  const TermsText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text.rich(TextSpan(children: [
+      TextSpan(
+        text: S.of(context).termCon1,
+        style: TextStyles.semiBold13.copyWith(
+          color: const Color(0xff949D9E),
+        ),
+      ),
+      const TextSpan(text: ' '),
+      TextSpan(
+        text: S.of(context).termCon2,
+        style: TextStyles.semiBold13.copyWith(
+          color: AppColors.primaryColor,
+        ),
+      ),
+    ]));
   }
 }

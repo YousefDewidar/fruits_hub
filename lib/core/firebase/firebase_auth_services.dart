@@ -22,4 +22,19 @@ class FirebaseAuthServices {
       name: name,
     );
   }
+
+  static Future<UserEntity> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    UserCredential credential = await auth.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    return UserEntity(
+      id: credential.user!.uid,
+      email: credential.user!.email!,
+      name: credential.user!.displayName!,
+    );
+  }
 }

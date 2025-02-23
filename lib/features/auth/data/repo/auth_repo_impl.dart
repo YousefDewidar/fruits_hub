@@ -28,10 +28,23 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  signInWithEmailAndPassword(
-      {required String email, required String password}) {
-    // TODO: implement signInWithEmailAndPassword
-    throw UnimplementedError();
+  Future<Either<Failuer, UserEntity>> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      UserEntity user = await FirebaseAuthServices.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      return right(user);
+    } catch (e) {
+      if (e is FirebaseAuthException) {
+        return left(FirebaseAuthError.fromCode(e.code));
+      }
+      return left(Failuer(message: "حدث خطأ ما حاول مرة أخرى"));
+    }
   }
 
   @override

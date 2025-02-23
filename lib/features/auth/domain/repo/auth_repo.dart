@@ -8,7 +8,10 @@ abstract class AuthRepo {
     required String password,
     required String name,
   });
-  signInWithEmailAndPassword({required String email, required String password});
+  Future<Either<Failuer, UserEntity>> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  });
 
   signInWithGoogle();
 
