@@ -56,6 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "required":
             MessageLookupByLibrary.simpleMessage("This field is required"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "signupSuccess": MessageLookupByLibrary.simpleMessage(
+            "Account created successfully"),
         "termCon1": MessageLookupByLibrary.simpleMessage(
             "By creating an account, you agree to"),
         "termCon2": MessageLookupByLibrary.simpleMessage("Terms & Conditions"),

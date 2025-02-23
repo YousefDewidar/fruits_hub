@@ -220,6 +220,16 @@ class S {
     );
   }
 
+  /// `Account created successfully`
+  String get signupSuccess {
+    return Intl.message(
+      'Account created successfully',
+      name: 'signupSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Forget Password`
   String get forgetPassAppbar {
     return Intl.message(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/features/auth/ui/managers/signup_cubit.dart';
 
 class CustomCheckBox extends StatefulWidget {
   const CustomCheckBox({
@@ -18,11 +20,12 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
     return InkWell(
       onTap: () {
         isCkecked = !isCkecked;
+        context.read<SignupCubit>().enableTermsAndCond(isCkecked);
         setState(() {});
       },
       borderRadius: BorderRadius.circular(8),
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 120),
         width: 24,
         height: 24,
         decoration: BoxDecoration(

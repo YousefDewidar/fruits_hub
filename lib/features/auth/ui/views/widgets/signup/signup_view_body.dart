@@ -4,13 +4,12 @@ import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/auth/ui/managers/signup_cubit.dart';
+import 'package:fruits_hub/features/auth/ui/managers/signup_state.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/custom_text_field.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/password_field.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/signup/allready_have_acc.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/signup/terms_and_cond.dart';
 import 'package:fruits_hub/generated/l10n.dart';
-import 'package:top_snackbar_flutter/custom_snack_bar.dart';
-import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 class SignupViewBody extends StatefulWidget {
   const SignupViewBody({super.key});
@@ -61,29 +60,30 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               const SpaceV(16),
               const TermsAndCond(),
               const SpaceV(30),
-              CustomButton(
-                  title: S.of(context).createAcc,
-                  onPressed: () {
-                    showTopSnackBar(
-                      Overlay.of(context),
-                      const CustomSnackBar.success(
-                      //   backgroundColor: AppColors.lightPrimaryColor,
-                        message: "تم انشاء الحساب بنجاح",
-                        // textStyle:
-                        //     TextStyles.bold16.copyWith(color: Colors.white),
-                      ),
-                    );
-                    if (formKey.currentState!.validate()) {
-                      context.read<SignupCubit>().signupWithEmailAndPassword(
-                            email: _emailCon.text,
-                            password: _passCon.text,
-                            name: _nameCon.text,
-                          );
-                    } else {
-                      autovalidateMode = AutovalidateMode.always;
-                      setState(() {});
-                    }
-                  }),
+              BlocBuilder<SignupCubit, SignupState>(
+                builder: (context, state) {
+                  return CustomButton(
+                    isEnabled: isTermsEnabeld(state),
+                    title: S.of(context).createAcc,
+                    onPressed: !isTermsEnabeld(state)
+                        ? null
+                        : () {
+                            if (formKey.currentState!.validate()) {
+                              context
+                                  .read<SignupCubit>()
+                                  .signupWithEmailAndPassword(
+                                    email: _emailCon.text,
+                                    password: _passCon.text,
+                                    name: _nameCon.text,
+                                  );
+                            } else {
+                              autovalidateMode = AutovalidateMode.always;
+                              setState(() {});
+                            }
+                          },
+                  );
+                },
+              ),
               const SpaceV(30),
               const AllreadyHaveAcc(),
             ],
@@ -92,4 +92,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       ),
     );
   }
+
+  bool isTermsEnabeld(SignupState state) =>
+      state is EnableTermsAndCondState ? state.value : false;
 }

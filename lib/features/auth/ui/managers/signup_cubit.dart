@@ -28,4 +28,8 @@ class SignupCubit extends Cubit<SignupState> {
       emit(SignupSuccess());
     });
   }
+
+  void enableTermsAndCond(bool value) {
+    emit(EnableTermsAndCondState(value: value));
+  }
 }

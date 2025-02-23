@@ -4,23 +4,27 @@ import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
-  final void Function() onPressed;
+  final bool isEnabled;
+  final void Function()? onPressed;
   const CustomButton({
     super.key,
     required this.title,
     required this.onPressed,
+    this.isEnabled = true,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      style: const ButtonStyle(
+      style: ButtonStyle(
         backgroundColor: WidgetStatePropertyAll(
-          AppColors.primaryColor,
+          isEnabled
+              ? AppColors.primaryColor
+              : const Color.fromARGB(143, 45, 159, 93),
         ),
-        fixedSize: WidgetStatePropertyAll(Size.fromHeight(59)),
-        shape: WidgetStatePropertyAll(
+        fixedSize: const WidgetStatePropertyAll(Size.fromHeight(59)),
+        shape: const WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(16),
