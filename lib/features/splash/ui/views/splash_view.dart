@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/helper/di.dart';
 import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:svg_flutter/svg.dart';
 
 class SplashView extends StatefulWidget {
@@ -16,13 +17,19 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
 
+    bool seenLanding = pref.getBool("viewLanding") ?? false;
+    SupabaseClient supabase = Supabase.instance.client;
+    var user = supabase.auth.currentUser;
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
-        bool seenLanding = pref.getBool("viewLanding") ?? false;
-        Navigator.pushReplacementNamed(
-          context,
-          seenLanding ? Routes.login : Routes.landing,
-        );
+        if (user != null) {
+          Navigator.pushReplacementNamed(context, Routes.home);
+        } else {
+          Navigator.pushReplacementNamed(
+            context,
+            seenLanding ? Routes.login : Routes.landing,
+          );
+        }
       }
     });
   }

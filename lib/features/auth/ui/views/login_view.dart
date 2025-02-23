@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper/di.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/in_app_notification.dart';
@@ -21,7 +22,7 @@ class LoginView extends StatelessWidget {
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) async {
           if (state is LoginSuccess) {
-            showNotification(context, "تم بنجاح يليفة", NotiType.success);
+            Navigator.pushReplacementNamed(context, Routes.home);
           } else if (state is LoginFailure) {
             showNotification(context, state.message, NotiType.error);
           }

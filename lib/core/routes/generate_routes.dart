@@ -5,6 +5,7 @@ import 'package:fruits_hub/features/auth/ui/views/login_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/new_password_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
+import 'package:fruits_hub/features/home/ui/views/home_view.dart';
 import 'package:fruits_hub/features/splash/ui/views/landing_view.dart';
 import 'package:fruits_hub/features/splash/ui/views/splash_view.dart';
 
@@ -25,6 +26,8 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const NewPasswordView());
     case Routes.landing:
       return MaterialPageRoute(builder: (context) => const LandingView());
+    case Routes.home:
+      return MaterialPageRoute(builder: (context) => const HomeView());
     default:
       return null;
   }

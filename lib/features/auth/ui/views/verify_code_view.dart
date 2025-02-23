@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper/di.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/widgets/custom_app_bar.dart';
 import 'package:fruits_hub/core/widgets/in_app_notification.dart';
 import 'package:fruits_hub/features/auth/domain/repo/auth_repo.dart';
@@ -21,6 +22,7 @@ class VerifyCodeView extends StatelessWidget {
       child: BlocConsumer<VerifyCubit, VerifyState>(
         listener: (context, state) {
           if (state is VerifyEmailSuccess) {
+            Navigator.pushReplacementNamed(context, Routes.home);
           } else if (state is VerifyEmailFailure) {
             showNotification(context, state.message, NotiType.error);
           }

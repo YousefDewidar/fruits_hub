@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
+import 'package:fruits_hub/features/auth/data/repo/supabase_repo_impl.dart';
+import 'package:fruits_hub/features/auth/domain/repo/auth_repo.dart';
 import 'package:fruits_hub/features/auth/ui/managers/login/login_cubit.dart';
 import 'package:fruits_hub/features/auth/ui/managers/login/login_state.dart';
+import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/custom_text_field.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/dont_have_acc.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/forget_pass_text_button.dart';
@@ -61,7 +63,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 listener: (context, state) {
                   if (state is LoginFailure) {
                     if (state.message == "Email not confirmed") {
-                      Navigator.pushNamed(context, Routes.verify);
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          AuthRepo authRepo = SupabaseRepoImpl();
+                          authRepo.resendOtp(email: _emailCon.text);
+                          return VerifyCodeView(email: _emailCon.text);
+                        },
+                      ));
                     }
                   }
                 },

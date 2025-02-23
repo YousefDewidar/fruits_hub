@@ -29,4 +29,6 @@ abstract class AuthRepo {
   signInWithApple();
 
   signInWithFacebook();
+
+  Future<Either<Failuer, UserEntity>> getUser();
 }
