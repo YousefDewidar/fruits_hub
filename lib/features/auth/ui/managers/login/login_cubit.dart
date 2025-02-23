@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/errors/custom_exception.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:fruits_hub/features/auth/domain/repo/auth_repo.dart';
-import 'package:fruits_hub/features/auth/ui/managers/login_state.dart';
+import 'package:fruits_hub/features/auth/ui/managers/login/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   AuthRepo authRepo;
@@ -27,4 +27,7 @@ class LoginCubit extends Cubit<LoginState> {
       emit(LoginSuccess());
     });
   }
+
+
+  
 }

@@ -20,7 +20,7 @@
   "forgetPassAppbar": "Forget Password",
   "forgetPassButton": "Forget Password",
   "forgetPass3": "Don't worry, just enter your email address and we will send you a verification code.",
-  "verifyAppbar": "Verify Code",
+  "verifyAppbar": "Verify Email",
   "verifyBody": "Enter the code we sent to your email address",
   "verifyButton": "Verify Code",
   "verifyAgain": "Resend Code",

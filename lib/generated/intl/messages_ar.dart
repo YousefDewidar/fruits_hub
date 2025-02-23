@@ -64,7 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الشروط والأحكام الخاصة بنا"),
         "verifyAgain":
             MessageLookupByLibrary.simpleMessage("إعادة إرسال الرمز"),
-        "verifyAppbar": MessageLookupByLibrary.simpleMessage("التحقق من الرمز"),
+        "verifyAppbar":
+            MessageLookupByLibrary.simpleMessage("التحقق من البريد الإلكتروني"),
         "verifyBody": MessageLookupByLibrary.simpleMessage(
             "أدخل الرمز الذي أرسلناه إلى عنوان بريد التالي"),
         "verifyButton": MessageLookupByLibrary.simpleMessage("تحقق من الرمز")

@@ -14,9 +14,9 @@ class OtpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: List.generate(4, (index) {
+      children: List.generate(6, (index) {
         return SizedBox(
-          width: (MediaQuery.of(context).size.width - 32 - 45) / 4,
+          width: (MediaQuery.of(context).size.width - 32 - 45) / 6,
           child: TextFormField(
             controller: _otpControllers[index],
             keyboardType: TextInputType.number,

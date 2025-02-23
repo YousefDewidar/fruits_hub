@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
-import 'package:fruits_hub/features/auth/ui/managers/signup_cubit.dart';
+import 'package:fruits_hub/features/auth/ui/managers/signup/signup_cubit.dart';
 
 class CustomCheckBox extends StatefulWidget {
   const CustomCheckBox({

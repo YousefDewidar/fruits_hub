@@ -7,4 +7,5 @@ abstract class Routes {
   static const forgetPass = 'forgetPass';
   static const verify = 'verify';
   static const newPass = 'newPass';
+
 }

@@ -62,7 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "By creating an account, you agree to"),
         "termCon2": MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
         "verifyAgain": MessageLookupByLibrary.simpleMessage("Resend Code"),
-        "verifyAppbar": MessageLookupByLibrary.simpleMessage("Verify Code"),
+        "verifyAppbar": MessageLookupByLibrary.simpleMessage("Verify Email"),
         "verifyBody": MessageLookupByLibrary.simpleMessage(
             "Enter the code we sent to your email address"),
         "verifyButton": MessageLookupByLibrary.simpleMessage("Verify Code")

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
-import 'package:fruits_hub/features/auth/ui/managers/login_cubit.dart';
+import 'package:fruits_hub/features/auth/ui/managers/login/login_cubit.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/custom_text_field.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/dont_have_acc.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/forget_pass_text_button.dart';

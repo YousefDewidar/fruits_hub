@@ -86,12 +86,12 @@ class SupabaseRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<Either<Failuer, String>> verifyEmail({required String email}) async {
-    await SupabaseAuthServices.verifyEmail(email: email);
-
+  Future<Either<Failuer, void>> verifyEmail({required String code}) async {
     try {
-      String token = await SupabaseAuthServices.verifyEmail(email: email);
-      return right(token);
+      await SupabaseAuthServices.verifyEmail(
+        code: code,
+      );
+      return right(null);
     } catch (e) {
       if (e is AuthException) {
         return left(Failuer(message: e.message));

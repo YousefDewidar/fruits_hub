@@ -260,10 +260,10 @@ class S {
     );
   }
 
-  /// `Verify Code`
+  /// `Verify Email`
   String get verifyAppbar {
     return Intl.message(
-      'Verify Code',
+      'Verify Email',
       name: 'verifyAppbar',
       desc: '',
       args: [],

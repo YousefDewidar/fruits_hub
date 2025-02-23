@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/errors/custom_exception.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:fruits_hub/features/auth/domain/repo/auth_repo.dart';
-import 'package:fruits_hub/features/auth/ui/managers/signup_state.dart';
+import 'package:fruits_hub/features/auth/ui/managers/signup/signup_state.dart';
 
 class SignupCubit extends Cubit<SignupState> {
   AuthRepo authRepo;
@@ -30,6 +30,7 @@ class SignupCubit extends Cubit<SignupState> {
       emit(EnableTermsAndCondState(value: true));
     });
   }
+
 
   void enableTermsAndCond(bool value) {
     emit(EnableTermsAndCondState(value: value));

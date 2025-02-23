@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -39,15 +41,14 @@ class SupabaseAuthServices {
     );
   }
 
-  static Future<String> verifyEmail({
-    required String email,
+  static Future<void> verifyEmail({
+    required String code,
   }) async {
-    AuthResponse response = await supabase.auth.verifyOTP(
+    await supabase.auth.verifyOTP(
       type: OtpType.email,
-      email: email,
+      email: supabase.auth.currentUser!.email!,
+      token: code,
     );
-
-    return response.session!.accessToken;
   }
 
   static Future<void> signOut() async {
@@ -70,7 +71,7 @@ class SupabaseAuthServices {
     );
   }
 
-  static Future getUser() async {
+  static Future<UserEntity> getUser() async {
     UserResponse u = await supabase.auth.getUser();
 
     return UserEntity(

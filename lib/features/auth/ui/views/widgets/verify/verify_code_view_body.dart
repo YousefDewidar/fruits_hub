@@ -19,7 +19,7 @@ class _VerifyCodeViewBodyState extends State<VerifyCodeViewBody> {
   final formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   final List<TextEditingController> _otpControllers =
-      List.generate(4, (_) => TextEditingController());
+      List.generate(6, (_) => TextEditingController());
 
   @override
   void dispose() {
