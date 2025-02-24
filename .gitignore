@@ -16,8 +16,7 @@ migrate_working_dir/
 *.iws
 .idea/
 
-# Firebase related
-firebase_options.dart
+
 
 lib/core/supabase/ksupabase.dart
 
