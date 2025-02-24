@@ -24,7 +24,7 @@ abstract class AuthRepo {
 
   Future<Either<Failuer, void>> resendOtp({required String email});
 
-  signInWithGoogle();
+  Future<Either<Failuer, void>> signInWithGoogle();
 
   signInWithApple();
 

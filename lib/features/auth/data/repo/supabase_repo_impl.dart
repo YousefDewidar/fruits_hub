@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:dartz/dartz.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:fruits_hub/core/errors/custom_exception.dart';
@@ -133,9 +134,17 @@ class SupabaseRepoImpl implements AuthRepo {
   }
 
   @override
-  signInWithGoogle() {
-    // TODO: implement signInWithGoogle
-    throw UnimplementedError();
+  Future<Either<Failuer, void>> signInWithGoogle() async {
+    try {
+      await services.signWithGoogle();
+      return right(null);
+    } catch (e) {
+    
+      if (e is AuthException) {
+        return left(Failuer(message: e.message));
+      }
+      return left(Failuer(message: 'حدث خطأ ما حاول مرة أخرى'));
+    }
   }
 
   @override

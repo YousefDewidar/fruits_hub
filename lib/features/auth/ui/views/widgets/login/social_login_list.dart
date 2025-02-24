@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
+import 'package:fruits_hub/features/auth/ui/managers/login/login_cubit.dart';
 import 'package:fruits_hub/features/auth/ui/views/widgets/login/social_login_card.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
@@ -16,7 +18,9 @@ class SocialLoginList extends StatelessWidget {
         SocialLoginCard(
           icon: Assets.imagesGoogleIcon,
           title: S.of(context).google,
-          onTap: () {},
+          onTap: () {
+            context.read<LoginCubit>().signWithGoogle();
+          },
         ),
         const SpaceV(16),
         SocialLoginCard(

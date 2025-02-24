@@ -28,14 +28,17 @@ class LoginCubit extends Cubit<LoginState> {
     });
   }
 
+  Future<void> signWithGoogle() async {
+    emit(LoginLoading());
+    final response = await authRepo.signInWithGoogle();
+    response.fold((failuer) {
+      emit(LoginFailure(message: failuer.message));
+    }, (user) {
+      emit(LoginSuccess());
+    });
+  }
 
-    sendCodeToEmail({required String email}) async {
-  
-
-      await authRepo.resetPassword(email: email);
-    
-    }
-  
-
-  
+  sendCodeToEmail({required String email}) async {
+    await authRepo.resetPassword(email: email);
+  }
 }

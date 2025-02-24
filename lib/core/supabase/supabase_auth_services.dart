@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:fruits_hub/features/auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseAuthServices {
@@ -73,5 +76,22 @@ class SupabaseAuthServices {
     UserResponse u = await supabase.auth.getUser();
 
     return UserModel.fromSupabaseUser(u.user!);
+  }
+
+  Future<void> signWithGoogle() async {
+    final googleSignIn = GoogleSignIn();
+    GoogleSignInAccount? googleUser;
+
+    googleUser = await googleSignIn.signIn();
+    final googleAuth = await googleUser!.authentication;
+
+    if (googleAuth.idToken == null) {
+      log('id token is null');
+    }
+
+    await supabase.auth.signInWithIdToken(
+      provider: OAuthProvider.google,
+      idToken: googleAuth.idToken!,
+    );
   }
 }
