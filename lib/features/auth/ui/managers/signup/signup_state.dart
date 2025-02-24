@@ -11,7 +11,4 @@ class SignupFailure extends SignupState {
 
 class SignupSuccess extends SignupState {}
 
-class EnableTermsAndCondState extends SignupState {
-  final bool value;
-  EnableTermsAndCondState({required this.value});
-}
+

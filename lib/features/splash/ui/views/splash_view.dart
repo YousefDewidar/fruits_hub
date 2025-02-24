@@ -16,7 +16,6 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-
     bool seenLanding = pref.getBool("viewLanding") ?? false;
     SupabaseClient supabase = Supabase.instance.client;
     var user = supabase.auth.currentUser;

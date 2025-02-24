@@ -24,9 +24,9 @@ class _SignupViewBodyState extends State<SignupViewBody> {
   final TextEditingController _emailCon = TextEditingController();
   final TextEditingController _passCon = TextEditingController();
   final TextEditingController _nameCon = TextEditingController();
-
   final formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  bool isTermsEnabeld = false;
 
   @override
   void dispose() {
@@ -60,7 +60,11 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               const SpaceV(16),
               PasswordField(controller: _passCon),
               const SpaceV(16),
-              const TermsAndCond(),
+              TermsAndCond(
+                onChange: (value) {
+                  isTermsEnabeld = value;
+                },
+              ),
               const SpaceV(30),
               BlocConsumer<SignupCubit, SignupState>(
                 listener: (context, state) {
@@ -82,9 +86,9 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 },
                 builder: (context, state) {
                   return CustomButton(
-                    isEnabled: isTermsEnabeld(state),
+                    isEnabled: isTermsEnabeld,
                     title: S.of(context).createAcc,
-                    onPressed: !isTermsEnabeld(state)
+                    onPressed: !isTermsEnabeld
                         ? null
                         : () {
                             if (formKey.currentState!.validate()) {
@@ -111,7 +115,4 @@ class _SignupViewBodyState extends State<SignupViewBody> {
       ),
     );
   }
-
-  bool isTermsEnabeld(SignupState state) =>
-      state is EnableTermsAndCondState ? state.value : false;
 }
