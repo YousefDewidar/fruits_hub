@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fruits_hub/features/auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -79,19 +77,23 @@ class SupabaseAuthServices {
   }
 
   Future<void> signWithGoogle() async {
-    final googleSignIn = GoogleSignIn();
-    GoogleSignInAccount? googleUser;
+    const webClientId =
+        '405060550320-ig4hdmp06eg2t9m7bjtj96r63fhjou36.apps.googleusercontent.com';
 
-    googleUser = await googleSignIn.signIn();
+    final GoogleSignIn googleSignIn = GoogleSignIn(
+      serverClientId: webClientId,
+    );
+    googleSignIn.signOut();
+
+    final googleUser = await googleSignIn.signIn();
     final googleAuth = await googleUser!.authentication;
-
-    if (googleAuth.idToken == null) {
-      log('id token is null');
-    }
+    final accessToken = googleAuth.accessToken;
+    final idToken = googleAuth.idToken;
 
     await supabase.auth.signInWithIdToken(
       provider: OAuthProvider.google,
-      idToken: googleAuth.idToken!,
+      idToken: idToken!,
+      accessToken: accessToken,
     );
   }
 }

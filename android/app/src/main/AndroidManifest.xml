@@ -22,6 +22,9 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+              <meta-data
+    android:name="com.google.android.gms.auth.api.signin.WebClientId"
+    android:value="405060550320-ig4hdmp06eg2t9m7bjtj96r63fhjou36.apps.googleusercontent.com" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

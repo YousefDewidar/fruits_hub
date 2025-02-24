@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:fruits_hub/core/errors/custom_exception.dart';
@@ -139,7 +141,7 @@ class SupabaseRepoImpl implements AuthRepo {
       await services.signWithGoogle();
       return right(null);
     } catch (e) {
-    
+      log('eee ${e.toString()}');
       if (e is AuthException) {
         return left(Failuer(message: e.message));
       }
