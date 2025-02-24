@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/helper/di.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
-import 'package:fruits_hub/features/auth/data/repo/supabase_repo_impl.dart';
 import 'package:fruits_hub/features/auth/domain/repo/auth_repo.dart';
 import 'package:fruits_hub/features/auth/ui/managers/login/login_cubit.dart';
 import 'package:fruits_hub/features/auth/ui/managers/login/login_state.dart';
@@ -61,17 +61,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               const SpaceV(25),
               BlocListener<LoginCubit, LoginState>(
                 listener: (context, state) {
-                  if (state is LoginFailure) {
-                    if (state.message == "Email not confirmed") {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          AuthRepo authRepo = SupabaseRepoImpl();
-                          authRepo.resendOtp(email: _emailCon.text);
-                          return VerifyCodeView(email: _emailCon.text);
-                        },
-                      ));
-                    }
-                  }
+                  handleEmailNotConfirmed(state, context);
                 },
                 child: CustomButton(
                   onPressed: () {
@@ -99,5 +89,19 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         ),
       ),
     );
+  }
+
+  void handleEmailNotConfirmed(LoginState state, BuildContext context) {
+    if (state is LoginFailure) {
+      if (state.message == "Email not confirmed") {
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) {
+            AuthRepo authRepo = getIt.get<AuthRepo>();
+            authRepo.resendOtp(email: _emailCon.text);
+            return VerifyCodeView(email: _emailCon.text);
+          },
+        ));
+      }
+    }
   }
 }

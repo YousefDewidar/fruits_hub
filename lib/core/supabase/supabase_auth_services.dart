@@ -3,10 +3,9 @@ import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseAuthServices {
-  SupabaseAuthServices._();
-  static SupabaseClient supabase = Supabase.instance.client;
+  SupabaseClient supabase = Supabase.instance.client;
 
-  static Future<UserEntity> signUpWithEmailAndPassword({
+  Future<UserEntity> signUpWithEmailAndPassword({
     required String email,
     required String password,
     required String name,
@@ -19,7 +18,7 @@ class SupabaseAuthServices {
     return UserModel.fromSupabaseUser(response.user!);
   }
 
-  static Future<UserEntity> signInWithEmailAndPassword({
+  Future<UserEntity> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
@@ -30,7 +29,7 @@ class SupabaseAuthServices {
     return UserModel.fromSupabaseUser(response.user!);
   }
 
-  static Future<void> verifyEmail({
+  Future<void> verifyEmail({
     required String code,
     required String email,
   }) async {
@@ -41,7 +40,7 @@ class SupabaseAuthServices {
     );
   }
 
-  static Future<void> resendOtp({
+  Future<void> resendOtp({
     required String email,
   }) async {
     await supabase.auth.resend(
@@ -50,11 +49,11 @@ class SupabaseAuthServices {
     );
   }
 
-  static Future<void> signOut() async {
+  Future<void> signOut() async {
     await supabase.auth.signOut();
   }
 
-  static Future<void> resetPassword({
+  Future<void> resetPassword({
     required String email,
   }) async {
     await supabase.auth.resetPasswordForEmail(
@@ -62,7 +61,7 @@ class SupabaseAuthServices {
     );
   }
 
-  static Future<void> updatePassword({
+  Future<void> updatePassword({
     required String newPassword,
   }) async {
     await supabase.auth.updateUser(
@@ -70,7 +69,7 @@ class SupabaseAuthServices {
     );
   }
 
-  static Future<UserEntity> getUser() async {
+  Future<UserEntity> getUser() async {
     UserResponse u = await supabase.auth.getUser();
 
     return UserModel.fromSupabaseUser(u.user!);

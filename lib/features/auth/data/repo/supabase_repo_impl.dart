@@ -1,18 +1,22 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dartz/dartz.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:fruits_hub/core/errors/custom_exception.dart';
 import 'package:fruits_hub/core/supabase/supabase_auth_services.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:fruits_hub/features/auth/domain/repo/auth_repo.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseRepoImpl implements AuthRepo {
+  final SupabaseAuthServices services;
+  SupabaseRepoImpl(this.services);
+
   @override
   Future<Either<Failuer, UserEntity>> signupWithEmailAndPassword(
       {required String email,
       required String password,
       required String name}) async {
     try {
-      UserEntity user = await SupabaseAuthServices.signUpWithEmailAndPassword(
+      UserEntity user = await services.signUpWithEmailAndPassword(
         email: email,
         password: password,
         name: name,
@@ -31,7 +35,7 @@ class SupabaseRepoImpl implements AuthRepo {
   Future<Either<Failuer, UserEntity>> signInWithEmailAndPassword(
       {required String email, required String password}) async {
     try {
-      UserEntity user = await SupabaseAuthServices.signInWithEmailAndPassword(
+      UserEntity user = await services.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -48,7 +52,7 @@ class SupabaseRepoImpl implements AuthRepo {
   @override
   Future<Either<Failuer, void>> signOut() async {
     try {
-      await SupabaseAuthServices.signOut();
+      await services.signOut();
       return right(null);
     } catch (e) {
       if (e is AuthException) {
@@ -61,7 +65,7 @@ class SupabaseRepoImpl implements AuthRepo {
   @override
   Future<Either<Failuer, void>> resetPassword({required String email}) async {
     try {
-      await SupabaseAuthServices.resetPassword(email: email);
+      await services.resetPassword(email: email);
       return right(null);
     } catch (e) {
       if (e is AuthException) {
@@ -75,7 +79,7 @@ class SupabaseRepoImpl implements AuthRepo {
   Future<Either<Failuer, void>> updatePassword(
       {required String newPassword}) async {
     try {
-      await SupabaseAuthServices.updatePassword(newPassword: newPassword);
+      await services.updatePassword(newPassword: newPassword);
       return right(null);
     } catch (e) {
       if (e is AuthException) {
@@ -89,7 +93,7 @@ class SupabaseRepoImpl implements AuthRepo {
   Future<Either<Failuer, void>> verifyEmail(
       {required String code, required String email}) async {
     try {
-      await SupabaseAuthServices.verifyEmail(
+      await services.verifyEmail(
         code: code,
         email: email,
       );
@@ -105,7 +109,7 @@ class SupabaseRepoImpl implements AuthRepo {
   @override
   Future<Either<Failuer, void>> resendOtp({required String email}) async {
     try {
-      await SupabaseAuthServices.resendOtp(email: email);
+      await services.resendOtp(email: email);
 
       return right(null);
     } catch (e) {
@@ -137,7 +141,7 @@ class SupabaseRepoImpl implements AuthRepo {
   @override
   Future<Either<Failuer, UserEntity>> getUser() async {
     try {
-      UserEntity user = await SupabaseAuthServices.getUser();
+      UserEntity user = await services.getUser();
       return right(user);
     } catch (e) {
       if (e is AuthException) {

@@ -7,8 +7,8 @@ class UserModel extends UserEntity {
   factory UserModel.fromSupabaseUser(User user) {
     return UserModel(
       id: user.id,
-      email: user.email!,
-      name: user.userMetadata!['name'],
+      email: user.email ?? '',
+      name: user.userMetadata?['name'] ?? '',
     );
   }
 }
