@@ -1,3 +1,4 @@
+
 import 'package:fruits_hub/features/auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -76,7 +77,7 @@ class SupabaseAuthServices {
     return UserModel.fromSupabaseUser(u.user!);
   }
 
-  Future<void> signWithGoogle() async {
+  Future<void> signInWithGoogle() async {
     const webClientId =
         '405060550320-ig4hdmp06eg2t9m7bjtj96r63fhjou36.apps.googleusercontent.com';
 
@@ -95,5 +96,15 @@ class SupabaseAuthServices {
       idToken: idToken!,
       accessToken: accessToken,
     );
+  }
+
+  Future<void> signInWithFacebook() async {
+    await supabase.auth.signInWithOAuth(
+      OAuthProvider.facebook,
+      redirectTo: 'https://nmssowwfztlaaguhtvhv.supabase.co/auth/v1/callback',
+      // authScreenLaunchMode: LaunchMode.inAppWebView,
+    );
+
+    await getUser();
   }
 }

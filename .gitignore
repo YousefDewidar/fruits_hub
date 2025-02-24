@@ -35,6 +35,8 @@ lib/core/supabase/ksupabase.dart
 .pub/
 /build/
 
+strings.xml
+
 # Symbolication related
 app.*.symbols
 

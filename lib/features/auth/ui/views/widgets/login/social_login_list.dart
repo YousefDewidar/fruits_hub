@@ -19,7 +19,7 @@ class SocialLoginList extends StatelessWidget {
           icon: Assets.imagesGoogleIcon,
           title: S.of(context).google,
           onTap: () {
-            context.read<LoginCubit>().signWithGoogle();
+            context.read<LoginCubit>().loginWithGoogle();
           },
         ),
         const SpaceV(16),
@@ -32,7 +32,9 @@ class SocialLoginList extends StatelessWidget {
         SocialLoginCard(
           icon: Assets.imagesFacebookIcon,
           title: S.of(context).face,
-          onTap: () {},
+          onTap: () {
+            context.read<LoginCubit>().loginWithFacebook();
+          },
         ),
       ],
     );
