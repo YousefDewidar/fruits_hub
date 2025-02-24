@@ -1,3 +1,4 @@
+import 'package:fruits_hub/features/auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -15,12 +16,7 @@ class SupabaseAuthServices {
       password: password,
       data: {'name': name},
     );
-
-    return UserEntity(
-      id: response.user!.id,
-      email: response.user!.email!,
-      name: response.user!.userMetadata!['name'],
-    );
+    return UserModel.fromSupabaseUser(response.user!);
   }
 
   static Future<UserEntity> signInWithEmailAndPassword({
@@ -31,12 +27,7 @@ class SupabaseAuthServices {
       email: email,
       password: password,
     );
-
-    return UserEntity(
-      id: response.user!.id,
-      email: response.user!.email!,
-      name: response.user!.userMetadata!['name'],
-    );
+    return UserModel.fromSupabaseUser(response.user!);
   }
 
   static Future<void> verifyEmail({
@@ -82,10 +73,6 @@ class SupabaseAuthServices {
   static Future<UserEntity> getUser() async {
     UserResponse u = await supabase.auth.getUser();
 
-    return UserEntity(
-      id: u.user!.id,
-      email: u.user!.email!,
-      name: u.user!.userMetadata!['name'],
-    );
+    return UserModel.fromSupabaseUser(u.user!);
   }
 }
