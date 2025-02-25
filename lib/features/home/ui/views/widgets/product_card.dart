@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
@@ -14,22 +13,18 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 163,
-      height: 214,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
           color: const Color(0xffF3F5F7)),
       child: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 10, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                    child:
-                        Image.asset(Assets.imagesWatermelonTest)),
+                const SpaceV(6),
+                Center(child: Image.asset(Assets.imagesWatermelonTest)),
                 const Spacer(),
                 const Text(
                   'بطيخ',
@@ -63,12 +58,15 @@ class ProductCard extends StatelessWidget {
               icon: const Icon(Icons.favorite_border_rounded),
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 16,
             left: 10,
-            child: CircleAvatar(
-              backgroundColor: AppColors.primaryColor,
-              child: Icon(Icons.add, color: Colors.white),
+            child: InkWell(
+              onTap: () {},
+              child: const CircleAvatar(
+                backgroundColor: AppColors.primaryColor,
+                child: Icon(Icons.add, color: Colors.white),
+              ),
             ),
           ),
         ],

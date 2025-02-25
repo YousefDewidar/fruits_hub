@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
+        "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
         "signUp": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "signupSuccess":
             MessageLookupByLibrary.simpleMessage("تم انشاء الحساب بنجاح"),

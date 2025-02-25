@@ -4,7 +4,8 @@ import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/best_seller_text_row.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/home_app_bar.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/product_card.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/offer_list_view.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/products_grid_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -21,14 +22,27 @@ class HomeViewBody extends StatelessWidget {
                 HomeAppBar(),
                 SpaceV(16),
                 SearchTextField(),
-                SpaceV(16),
-                BestSellerTextRow(),
-                SpaceV(16),
-                ProductCard(),
+                SpaceV(12),
               ],
             ),
           ),
         ),
+        SliverToBoxAdapter(
+          child: OfferListView(),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: kHoripadding),
+            child: Column(
+              children: [
+                SpaceV(12),
+                BestSellerTextRow(),
+                SpaceV(8),
+              ],
+            ),
+          ),
+        ),
+        ProductsGridView()
       ],
     );
   }
