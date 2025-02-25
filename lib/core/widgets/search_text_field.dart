@@ -37,6 +37,7 @@ class SearchTextField extends StatelessWidget {
           ),
           prefixIcon: SvgPicture.asset(
             Assets.imagesSearchIcon,
+            // ignore: deprecated_member_use
             color: AppColors.primaryColor,
             fit: BoxFit.scaleDown,
           ),
