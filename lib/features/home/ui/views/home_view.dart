@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              SupabaseClient supabase = Supabase.instance.client;
-
-              supabase.auth.signOut();
-            },
-            icon: const Icon(Icons.logout)),
+    return const Scaffold(
+      body: SafeArea(
+        child: HomeViewBody(),
       ),
     );
   }

@@ -43,7 +43,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "google": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
+        "homeHello": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "more": MessageLookupByLibrary.simpleMessage("المزيد"),
+        "mostPop": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
         "newPassAppbar":
             MessageLookupByLibrary.simpleMessage("كلمة مرور جديدة"),
         "newPassBody": MessageLookupByLibrary.simpleMessage(
@@ -55,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+        "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "signUp": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "signupSuccess":
             MessageLookupByLibrary.simpleMessage("تم انشاء الحساب بنجاح"),

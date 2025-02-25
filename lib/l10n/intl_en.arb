@@ -28,5 +28,9 @@
   "newPassButton": "Change Password",
   "newPassBody": "Create a new password to log in",
   "confirmPass": "Confirm ",
-  "newPassDone": "Password changed successfully"
+  "newPassDone": "Password changed successfully",
+  "homeHello": "Good Morning !..",
+  "searchHint": "Search.......",
+  "mostPop": "Best Seller",
+  "more": "More"
 }
