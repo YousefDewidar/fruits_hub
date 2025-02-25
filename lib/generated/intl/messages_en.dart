@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "allreadyhaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "apple": MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
+        "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("Confirm "),
         "createAcc":
             MessageLookupByLibrary.simpleMessage("Create a new account"),
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "homeHello": MessageLookupByLibrary.simpleMessage("Good Morning !.."),
         "kilo": MessageLookupByLibrary.simpleMessage("Kilo"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -58,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password changed successfully"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "products": MessageLookupByLibrary.simpleMessage("Products"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "required":
             MessageLookupByLibrary.simpleMessage("This field is required"),
         "searchHint": MessageLookupByLibrary.simpleMessage("Search......."),

@@ -35,5 +35,9 @@
   "more": "More",
   "kilo": "Kilo",
   "egp": "EGP",
-  "shopNow": "Shop Now"
+  "shopNow": "Shop Now",
+  "home": "Home",
+  "products": "Products",
+  "cart": "Cart",
+  "profile": "Profile"
 }

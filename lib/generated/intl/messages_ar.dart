@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "allreadyhaveAccount":
             MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟"),
         "apple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة ابل"),
+        "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("تاكيد "),
         "createAcc": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
         "dontHaveAccount1":
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "google": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "homeHello": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "kilo": MessageLookupByLibrary.simpleMessage("الكيلو"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
@@ -59,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+        "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
         "required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
