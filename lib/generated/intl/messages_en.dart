@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAccount1":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "dontHaveAccount2": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "egp": MessageLookupByLibrary.simpleMessage("EGP"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "face": MessageLookupByLibrary.simpleMessage("Sign in with Facebook"),
         "forgetPass3": MessageLookupByLibrary.simpleMessage(
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
         "homeHello": MessageLookupByLibrary.simpleMessage("Good Morning !.."),
+        "kilo": MessageLookupByLibrary.simpleMessage("Kilo"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "mostPop": MessageLookupByLibrary.simpleMessage("Best Seller"),

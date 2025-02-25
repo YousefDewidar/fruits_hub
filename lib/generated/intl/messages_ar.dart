@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا تملك حساب؟"),
         "dontHaveAccount2":
             MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
+        "egp": MessageLookupByLibrary.simpleMessage("جنيه"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "face": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة فيسبوك"),
         "forgetPass3": MessageLookupByLibrary.simpleMessage(
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "google": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
         "homeHello": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
+        "kilo": MessageLookupByLibrary.simpleMessage("الكيلو"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "mostPop": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),

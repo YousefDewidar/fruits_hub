@@ -389,6 +389,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Kilo`
+  String get kilo {
+    return Intl.message(
+      'Kilo',
+      name: 'kilo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EGP`
+  String get egp {
+    return Intl.message(
+      'EGP',
+      name: 'egp',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
