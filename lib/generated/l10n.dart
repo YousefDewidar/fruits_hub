@@ -349,6 +349,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Good Morning !..`
+  String get homeHello {
+    return Intl.message(
+      'Good Morning !..',
+      name: 'homeHello',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search.......`
+  String get searchHint {
+    return Intl.message(
+      'Search.......',
+      name: 'searchHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best Seller`
+  String get mostPop {
+    return Intl.message(
+      'Best Seller',
+      name: 'mostPop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More`
+  String get more {
+    return Intl.message(
+      'More',
+      name: 'more',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

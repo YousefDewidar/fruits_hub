@@ -43,7 +43,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
+        "homeHello": MessageLookupByLibrary.simpleMessage("Good Morning !.."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "more": MessageLookupByLibrary.simpleMessage("More"),
+        "mostPop": MessageLookupByLibrary.simpleMessage("Best Seller"),
         "newPassAppbar": MessageLookupByLibrary.simpleMessage("New Password"),
         "newPassBody": MessageLookupByLibrary.simpleMessage(
             "Create a new password to log in"),
@@ -55,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "required":
             MessageLookupByLibrary.simpleMessage("This field is required"),
+        "searchHint": MessageLookupByLibrary.simpleMessage("Search......."),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "signupSuccess": MessageLookupByLibrary.simpleMessage(
             "Account created successfully"),
