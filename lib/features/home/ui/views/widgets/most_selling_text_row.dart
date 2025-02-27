@@ -4,8 +4,8 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
-class BestSellerTextRow extends StatelessWidget {
-  const BestSellerTextRow({
+class MostSellingTextRow extends StatelessWidget {
+  const MostSellingTextRow({
     super.key,
   });
 

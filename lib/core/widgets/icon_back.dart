@@ -16,7 +16,7 @@ class IconsBack extends StatelessWidget {
             shape: BoxShape.circle,
             border: Border.all(color: const Color(0xffF1F1F5))),
         child: const Icon(
-          size: 18,
+          size: 16,
           Icons.arrow_back_ios_new_rounded,
           color: Color(0xff0C0D0D),
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/best_seller_text_row.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/most_selling_text_row.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/home_app_bar.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/offer_list_view.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/products_grid_view.dart';
@@ -36,7 +36,7 @@ class HomeViewBody extends StatelessWidget {
             child: Column(
               children: [
                 SpaceV(12),
-                BestSellerTextRow(),
+                MostSellingTextRow(),
                 SpaceV(8),
               ],
             ),
