@@ -7,6 +7,7 @@ import 'package:fruits_hub/features/auth/ui/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
 import 'package:fruits_hub/features/home/ui/views/home_view.dart';
 import 'package:fruits_hub/features/home/ui/views/most_selling_view.dart';
+import 'package:fruits_hub/features/home/ui/views/search_view.dart';
 import 'package:fruits_hub/features/splash/ui/views/landing_view.dart';
 import 'package:fruits_hub/features/splash/ui/views/splash_view.dart';
 
@@ -31,6 +32,8 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const HomeView());
     case Routes.mostSelling:
       return MaterialPageRoute(builder: (context) => const MostSellingView());
+    case Routes.search:
+      return MaterialPageRoute(builder: (context) => const SearchView());
     default:
       return null;
   }

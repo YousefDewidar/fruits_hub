@@ -8,7 +8,9 @@ import 'package:svg_flutter/svg.dart';
 class SearchTextField extends StatelessWidget {
   const SearchTextField({
     super.key,
+    this.enabled = true,
   });
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class SearchTextField extends StatelessWidget {
         ],
       ),
       child: TextField(
+        enabled: enabled,
         decoration: InputDecoration(
           hintText: S.of(context).searchHint,
           hintStyle: TextStyles.regular13.copyWith(color: AppColors.greyColor),

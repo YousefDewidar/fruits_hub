@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "apple": MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+        "clearAll": MessageLookupByLibrary.simpleMessage("Clear All"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("Confirm "),
         "createAcc":
             MessageLookupByLibrary.simpleMessage("Create a new account"),
@@ -48,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "homeHello": MessageLookupByLibrary.simpleMessage("Good Morning !.."),
         "kilo": MessageLookupByLibrary.simpleMessage("Kilo"),
+        "lastSearch": MessageLookupByLibrary.simpleMessage("Last Search"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "mostPop": MessageLookupByLibrary.simpleMessage("Best Seller"),
@@ -58,13 +60,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change Password"),
         "newPassDone": MessageLookupByLibrary.simpleMessage(
             "Password changed successfully"),
+        "noSearch": MessageLookupByLibrary.simpleMessage("No Search Results"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "products": MessageLookupByLibrary.simpleMessage("Products"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "required":
             MessageLookupByLibrary.simpleMessage("This field is required"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchHint": MessageLookupByLibrary.simpleMessage("Search......."),
+        "searchRes": MessageLookupByLibrary.simpleMessage("Search Results"),
         "shopNow": MessageLookupByLibrary.simpleMessage("Shop Now"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "signupSuccess": MessageLookupByLibrary.simpleMessage(

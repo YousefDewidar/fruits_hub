@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/icon_back.dart';
 import 'package:fruits_hub/core/widgets/notification_icon.dart';
-import 'package:fruits_hub/generated/l10n.dart';
 
-class MostSellingAppBar extends StatelessWidget {
-  const MostSellingAppBar({
+class AppBarWithNotification extends StatelessWidget {
+  final String title;
+  const AppBarWithNotification({
     super.key,
+    required this.title,
   });
 
   @override
@@ -28,7 +29,7 @@ class MostSellingAppBar extends StatelessWidget {
       ),
       leadingWidth: 70,
       title: Text(
-        S.of(context).mostPop,
+        title,
         style: TextStyles.bold19,
       ),
       centerTitle: true,

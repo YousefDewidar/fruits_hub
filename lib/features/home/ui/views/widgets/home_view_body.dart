@@ -1,36 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/most_selling_text_row.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/home_app_bar.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/offer_list_view.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/products_grid_view.dart';
+import 'package:fruits_hub/core/widgets/products_grid_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: kHoripadding),
+            padding: const EdgeInsets.symmetric(horizontal: kHoripadding),
             child: Column(
               children: [
-                HomeAppBar(),
-                SpaceV(16),
-                SearchTextField(),
-                SpaceV(12),
+                const HomeAppBar(),
+                const SpaceV(16),
+                GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, Routes.search),
+                  child: const SearchTextField(enabled: false),
+                ),
+                const SpaceV(12),
               ],
             ),
           ),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: OfferListView(),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: kHoripadding),
             child: Column(
@@ -42,7 +46,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-        ProductsGridView()
+        const ProductsGridView()
       ],
     );
   }

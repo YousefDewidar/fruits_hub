@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟"),
         "apple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة ابل"),
         "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
+        "clearAll": MessageLookupByLibrary.simpleMessage("حذف الكل"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("تاكيد "),
         "createAcc": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
         "dontHaveAccount1":
@@ -48,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "homeHello": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "kilo": MessageLookupByLibrary.simpleMessage("الكيلو"),
+        "lastSearch":
+            MessageLookupByLibrary.simpleMessage("عمليات البحث الأخيرة"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "mostPop": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
@@ -59,12 +62,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
         "newPassDone":
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
+        "noSearch": MessageLookupByLibrary.simpleMessage("لا يوجد نتائج بحث"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
         "required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+        "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
+        "searchRes": MessageLookupByLibrary.simpleMessage("نتائج البحث"),
         "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
         "signUp": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "signupSuccess":

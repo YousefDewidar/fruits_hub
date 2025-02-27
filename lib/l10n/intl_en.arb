@@ -39,5 +39,12 @@
   "home": "Home",
   "products": "Products",
   "cart": "Cart",
-  "profile": "Profile"
+  "profile": "Profile",
+
+  "search": "Search",
+
+  "searchRes": "Search Results",
+  "lastSearch": "Last Search",
+  "noSearch": "No Search Results",
+  "clearAll": "Clear All"
 }

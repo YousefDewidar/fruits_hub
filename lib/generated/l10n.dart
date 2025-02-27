@@ -459,6 +459,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search Results`
+  String get searchRes {
+    return Intl.message(
+      'Search Results',
+      name: 'searchRes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Search`
+  String get lastSearch {
+    return Intl.message(
+      'Last Search',
+      name: 'lastSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Search Results`
+  String get noSearch {
+    return Intl.message(
+      'No Search Results',
+      name: 'noSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear All`
+  String get clearAll {
+    return Intl.message(
+      'Clear All',
+      name: 'clearAll',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
