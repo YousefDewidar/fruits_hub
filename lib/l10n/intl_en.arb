@@ -40,11 +40,12 @@
   "products": "Products",
   "cart": "Cart",
   "profile": "Profile",
-
   "search": "Search",
-
   "searchRes": "Search Results",
   "lastSearch": "Last Search",
   "noSearch": "No Search Results",
-  "clearAll": "Clear All"
+  "clearAll": "Clear All",
+  "notification": "Notifications",
+  "selectAllRead": "Select All as Read",
+  "new_notification": "New"
 }

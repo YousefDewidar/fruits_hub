@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/product_card.dart';
+import 'package:fruits_hub/core/widgets/product_card.dart';
 
 class ProductsGridView extends StatelessWidget {
   const ProductsGridView({

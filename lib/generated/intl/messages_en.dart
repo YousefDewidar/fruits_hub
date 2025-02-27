@@ -60,7 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Change Password"),
         "newPassDone": MessageLookupByLibrary.simpleMessage(
             "Password changed successfully"),
+        "new_notification": MessageLookupByLibrary.simpleMessage("New"),
         "noSearch": MessageLookupByLibrary.simpleMessage("No Search Results"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notifications"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "products": MessageLookupByLibrary.simpleMessage("Products"),
@@ -70,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchHint": MessageLookupByLibrary.simpleMessage("Search......."),
         "searchRes": MessageLookupByLibrary.simpleMessage("Search Results"),
+        "selectAllRead":
+            MessageLookupByLibrary.simpleMessage("Select All as Read"),
         "shopNow": MessageLookupByLibrary.simpleMessage("Shop Now"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "signupSuccess": MessageLookupByLibrary.simpleMessage(

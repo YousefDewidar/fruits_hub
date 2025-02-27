@@ -12,6 +12,7 @@ class MostSellingViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         AppBarWithNotification(
           title: S.of(context).mostPop,

@@ -9,4 +9,6 @@ abstract class Routes {
   static const newPass = 'newPass';
   static const mostSelling = 'mostSelling';
   static const search = 'search';
+  static const notification = 'notification';
+
 }

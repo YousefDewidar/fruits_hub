@@ -62,7 +62,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
         "newPassDone":
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
+        "new_notification": MessageLookupByLibrary.simpleMessage("جديد"),
         "noSearch": MessageLookupByLibrary.simpleMessage("لا يوجد نتائج بحث"),
+        "notification": MessageLookupByLibrary.simpleMessage("الاشعارات"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
@@ -71,6 +73,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "searchRes": MessageLookupByLibrary.simpleMessage("نتائج البحث"),
+        "selectAllRead":
+            MessageLookupByLibrary.simpleMessage("تحديد الكل كمقروء"),
         "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
         "signUp": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "signupSuccess":

@@ -509,6 +509,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Notifications`
+  String get notification {
+    return Intl.message(
+      'Notifications',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select All as Read`
+  String get selectAllRead {
+    return Intl.message(
+      'Select All as Read',
+      name: 'selectAllRead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New`
+  String get new_notification {
+    return Intl.message(
+      'New',
+      name: 'new_notification',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

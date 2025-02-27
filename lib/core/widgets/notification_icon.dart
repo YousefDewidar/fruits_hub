@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:svg_flutter/svg.dart';
@@ -10,16 +11,22 @@ class NotificationIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      decoration: const BoxDecoration(
-        shape: BoxShape.circle,
-        color: Color(0xffEEF8ED),
-      ),
-      child: SvgPicture.asset(
-        Assets.imagesNotification,
-        // ignore: deprecated_member_use
-        color: AppColors.primaryColor,
+    return InkWell(
+      borderRadius: BorderRadius.circular(50),
+      onTap: () {
+        Navigator.pushNamed(context, Routes.notification);
+      },
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          color: Color(0xffEEF8ED),
+        ),
+        child: SvgPicture.asset(
+          Assets.imagesNotification,
+          // ignore: deprecated_member_use
+          color: AppColors.primaryColor,
+        ),
       ),
     );
   }

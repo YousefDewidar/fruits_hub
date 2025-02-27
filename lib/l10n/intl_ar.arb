@@ -40,11 +40,12 @@
   "products": "المنتجات",
   "cart": "سلة التسوق",
   "profile": "حسابي",
-
   "search": "البحث",
-
   "searchRes": "نتائج البحث",
   "lastSearch": "عمليات البحث الأخيرة",
   "noSearch": "لا يوجد نتائج بحث",
-  "clearAll": "حذف الكل"
+  "clearAll": "حذف الكل",
+  "notification": "الاشعارات",
+  "selectAllRead": "تحديد الكل كمقروء",
+  "new_notification": "جديد"
 }

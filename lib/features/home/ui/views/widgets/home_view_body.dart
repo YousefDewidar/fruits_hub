@@ -46,7 +46,10 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-        const ProductsGridView()
+        const ProductsGridView(),
+        const SliverToBoxAdapter(
+          child: SpaceV(16),
+        ),
       ],
     );
   }
