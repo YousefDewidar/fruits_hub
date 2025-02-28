@@ -31,8 +31,8 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const LandingView());
     case Routes.home:
       return MaterialPageRoute(builder: (context) => const HomeView());
-    case Routes.mostSelling:
-      return MaterialPageRoute(builder: (context) => const MostSellingView());
+    // case Routes.mostSelling:
+    //   return MaterialPageRoute(builder: (context) => const MostSellingView());
     case Routes.search:
       return MaterialPageRoute(builder: (context) => const SearchView());
     case Routes.notification:

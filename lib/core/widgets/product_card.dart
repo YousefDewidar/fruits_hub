@@ -1,13 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
+import 'package:fruits_hub/core/widgets/fav_icon.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
+import 'package:fruits_hub/features/home/domain/entities/product_entity.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class ProductCard extends StatelessWidget {
+  final ProductEntity product;
   const ProductCard({
     super.key,
+    required this.product,
   });
 
   @override
@@ -26,15 +32,15 @@ class ProductCard extends StatelessWidget {
                 const SpaceV(6),
                 Center(child: Image.asset(Assets.imagesWatermelonTest)),
                 const Spacer(),
-                const Text(
-                  'بطيخ',
+                Text(
+                  product.title,
                   style: TextStyles.semiBold13,
                 ),
                 const SpaceV(4),
                 Row(
                   children: [
                     Text(
-                      "20${S.of(context).egp} / ",
+                      "${product.price}${S.of(context).egp} / ",
                       style: TextStyles.bold13.copyWith(
                         color: AppColors.secondaryColor,
                       ),
@@ -50,14 +56,7 @@ class ProductCard extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-            top: 0,
-            right: 0,
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.favorite_border_rounded),
-            ),
-          ),
+          const FavIcon(),
           Positioned(
             bottom: 16,
             left: 10,
@@ -74,3 +73,4 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
+
