@@ -9,13 +9,20 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 var getIt = GetIt.instance;
 
-void setupLocator() {
-  getIt.registerSingleton<AuthRepo>(SupabaseRepoImpl(SupabaseAuthServices()));
-  getIt.registerSingleton<HomeRepo>(HomeRepoImpl(DatabaseServices()));
+Future<void> setupLocator() async {
+  getIt.registerSingleton<DatabaseServices>(DatabaseServices());
+
+  getIt.registerSingleton<AuthRepo>(SupabaseRepoImpl(
+    SupabaseAuthServices(),
+    getIt.get<DatabaseServices>(),
+  ));
+
+  getIt.registerSingleton<HomeRepo>(
+    HomeRepoImpl(
+      getIt.get<DatabaseServices>(),
+    ),
+  );
+  final sharedPreferences = await SharedPreferences.getInstance();
+  getIt.registerSingleton<SharedPreferences>(sharedPreferences);
 }
 
-late SharedPreferences pref;
-
-Future<void> initSharedPref() async {
-  pref = await SharedPreferences.getInstance();
-}

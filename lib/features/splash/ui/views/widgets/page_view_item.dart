@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:fruits_hub/core/helper/di.dart';
 import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:svg_flutter/svg.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -50,7 +51,9 @@ class PageViewItem extends StatelessWidget {
                   visible: isVisible,
                   child: GestureDetector(
                     onTap: () {
-                      pref.setBool("viewLanding", true);
+                      getIt
+                          .get<SharedPreferences>()
+                          .setBool("viewLanding", true);
                       Navigator.pushReplacementNamed(
                         context,
                         Routes.login,

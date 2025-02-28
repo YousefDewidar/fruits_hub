@@ -6,7 +6,6 @@ import 'package:fruits_hub/features/auth/ui/views/new_password_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
 import 'package:fruits_hub/features/home/ui/views/home_view.dart';
-import 'package:fruits_hub/features/home/ui/views/most_selling_view.dart';
 import 'package:fruits_hub/features/home/ui/views/notification_view.dart';
 import 'package:fruits_hub/features/home/ui/views/search_view.dart';
 import 'package:fruits_hub/features/splash/ui/views/landing_view.dart';

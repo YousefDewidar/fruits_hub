@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/helper/di.dart';
 import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -16,7 +17,8 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    bool seenLanding = pref.getBool("viewLanding") ?? false;
+    bool seenLanding =
+        getIt.get<SharedPreferences>().getBool("viewLanding") ?? false;
     SupabaseClient supabase = Supabase.instance.client;
     var user = supabase.auth.currentUser;
     Future.delayed(const Duration(seconds: 2), () {

@@ -1,4 +1,3 @@
-
 import 'package:fruits_hub/features/auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -73,11 +72,10 @@ class SupabaseAuthServices {
 
   Future<UserEntity> getUser() async {
     UserResponse u = await supabase.auth.getUser();
-
     return UserModel.fromSupabaseUser(u.user!);
   }
 
-  Future<void> signInWithGoogle() async {
+  Future<User> signInWithGoogle() async {
     const webClientId =
         '405060550320-ig4hdmp06eg2t9m7bjtj96r63fhjou36.apps.googleusercontent.com';
 
@@ -91,11 +89,13 @@ class SupabaseAuthServices {
     final accessToken = googleAuth.accessToken;
     final idToken = googleAuth.idToken;
 
-    await supabase.auth.signInWithIdToken(
+    AuthResponse response = await supabase.auth.signInWithIdToken(
       provider: OAuthProvider.google,
       idToken: idToken!,
       accessToken: accessToken,
     );
+
+    return response.user!;
   }
 
   Future<void> signInWithFacebook() async {
@@ -107,4 +107,6 @@ class SupabaseAuthServices {
 
     await getUser();
   }
+
+
 }

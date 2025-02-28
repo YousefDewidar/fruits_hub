@@ -7,6 +7,7 @@ import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/splash/ui/views/widgets/landing_page_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LandingView extends StatefulWidget {
   const LandingView({super.key});
@@ -69,7 +70,7 @@ class _LandingViewState extends State<LandingView> {
             ),
             child: CustomButton(
               onPressed: () {
-                pref.setBool("viewLanding", true);
+                getIt.get<SharedPreferences>().setBool("viewLanding", true);
                 Navigator.pushReplacementNamed(
                   context,
                   Routes.login,

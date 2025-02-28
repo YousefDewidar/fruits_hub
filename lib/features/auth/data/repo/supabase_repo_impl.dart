@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
+import 'package:fruits_hub/core/helper/user_data.dart';
+import 'package:fruits_hub/core/supabase/database_services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:fruits_hub/core/errors/custom_exception.dart';
 import 'package:fruits_hub/core/supabase/supabase_auth_services.dart';
@@ -7,7 +11,8 @@ import 'package:fruits_hub/features/auth/domain/repo/auth_repo.dart';
 
 class SupabaseRepoImpl implements AuthRepo {
   final SupabaseAuthServices services;
-  SupabaseRepoImpl(this.services);
+  final DatabaseServices databaseServices;
+  SupabaseRepoImpl(this.services, this.databaseServices);
 
   @override
   Future<Either<Failuer, UserEntity>> signupWithEmailAndPassword(
@@ -20,9 +25,10 @@ class SupabaseRepoImpl implements AuthRepo {
         password: password,
         name: name,
       );
-
+      await addUserToDatabase(user);
       return right(user);
     } catch (e) {
+      log(e.toString());
       if (e is AuthException) {
         return left(Failuer(message: e.message));
       }
@@ -38,7 +44,7 @@ class SupabaseRepoImpl implements AuthRepo {
         email: email,
         password: password,
       );
-
+      await UserLocaldata.setUserData(user);
       return right(user);
     } catch (e) {
       if (e is AuthException) {
@@ -132,7 +138,8 @@ class SupabaseRepoImpl implements AuthRepo {
   @override
   Future<Either<Failuer, void>> signInWithGoogle() async {
     try {
-      await services.signInWithGoogle();
+      User user = await services.signInWithGoogle();
+      await addUserToDatabase(UserEntity.fromSupabaseUser(user));
       return right(null);
     } catch (e) {
       return left(Failuer(message: 'حدث خطأ ما حاول مرة أخرى'));
@@ -150,5 +157,10 @@ class SupabaseRepoImpl implements AuthRepo {
       }
       return left(Failuer(message: 'حدث خطأ ما حاول مرة أخرى'));
     }
+  }
+
+  Future<void> addUserToDatabase(UserEntity user) async {
+    await databaseServices.setRecord(tableName: 'users', data: user.toMap());
+    await UserLocaldata.setUserData(user);
   }
 }

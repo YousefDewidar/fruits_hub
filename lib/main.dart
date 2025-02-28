@@ -16,8 +16,8 @@ void main() async {
     anonKey: kSupabaseAnonKey,
   );
   Bloc.observer = SimpleBlocObserver();
-  await initSharedPref();
-  setupLocator();
+
+  await setupLocator();
   runApp(const FruitsHub());
 }
 
@@ -39,7 +39,7 @@ class FruitsHub extends StatelessWidget {
       locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: Routes.home,
+      initialRoute: Routes.splash,
     );
   }
 }
