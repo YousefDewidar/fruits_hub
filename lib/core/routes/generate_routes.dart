@@ -5,7 +5,7 @@ import 'package:fruits_hub/features/auth/ui/views/login_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/new_password_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
-import 'package:fruits_hub/features/home/ui/views/home_view.dart';
+import 'package:fruits_hub/features/home/ui/views/main_view.dart';
 import 'package:fruits_hub/features/home/ui/views/notification_view.dart';
 import 'package:fruits_hub/features/home/ui/views/search_view.dart';
 import 'package:fruits_hub/features/splash/ui/views/landing_view.dart';
@@ -29,7 +29,7 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
     case Routes.landing:
       return MaterialPageRoute(builder: (context) => const LandingView());
     case Routes.home:
-      return MaterialPageRoute(builder: (context) => const HomeView());
+      return MaterialPageRoute(builder: (context) => const MainView());
     // case Routes.mostSelling:
     //   return MaterialPageRoute(builder: (context) => const MostSellingView());
     case Routes.search:

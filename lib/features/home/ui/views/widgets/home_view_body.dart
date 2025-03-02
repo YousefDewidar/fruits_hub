@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
+import 'package:fruits_hub/core/widgets/products_grid_view.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/most_selling_text_row.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/home_app_bar.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/most_selling_text_row.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/offer_list_view.dart';
-import 'package:fruits_hub/core/widgets/products_grid_view.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +49,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         const ProductsGridView(),
-        const SliverToBoxAdapter(
-          child: SpaceV(16),
-        ),
+        const SliverToBoxAdapter(child: SpaceV(16)),
       ],
     );
   }
