@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
-import 'package:fruits_hub/core/widgets/product_card.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/most_selling/product_card.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/home/domain/entities/product_entity.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/most_selling/app_bar_with_notification.dart';

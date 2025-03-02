@@ -47,5 +47,6 @@
   "clearAll": "حذف الكل",
   "notification": "الاشعارات",
   "selectAllRead": "تحديد الكل كمقروء",
-  "new_notification": "جديد"
+  "new_notification": "جديد",
+  "searchNotFound": "عفوًا... هذا المنتج غير متوفر حاليا"
 }

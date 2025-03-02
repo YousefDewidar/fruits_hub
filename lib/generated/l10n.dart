@@ -539,6 +539,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Sorry... This product is not available now`
+  String get searchNotFound {
+    return Intl.message(
+      'Sorry... This product is not available now',
+      name: 'searchNotFound',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -72,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
+        "searchNotFound": MessageLookupByLibrary.simpleMessage(
+            "عفوًا... هذا المنتج غير متوفر حاليا"),
         "searchRes": MessageLookupByLibrary.simpleMessage("نتائج البحث"),
         "selectAllRead":
             MessageLookupByLibrary.simpleMessage("تحديد الكل كمقروء"),

@@ -71,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("This field is required"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchHint": MessageLookupByLibrary.simpleMessage("Search......."),
+        "searchNotFound": MessageLookupByLibrary.simpleMessage(
+            "Sorry... This product is not available now"),
         "searchRes": MessageLookupByLibrary.simpleMessage("Search Results"),
         "selectAllRead":
             MessageLookupByLibrary.simpleMessage("Select All as Read"),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
-import 'package:fruits_hub/core/widgets/products_grid_view.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/most_selling/most_selling_grid_view_bloc_consumer.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/home_app_bar.dart';
@@ -48,7 +48,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-        const ProductsGridView(),
+        const ProductsGridViewBlocConsumer(),
         const SliverToBoxAdapter(child: SpaceV(16)),
       ],
     );

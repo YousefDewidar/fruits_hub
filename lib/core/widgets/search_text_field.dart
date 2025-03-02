@@ -10,9 +10,11 @@ class SearchTextField extends StatelessWidget {
     super.key,
     this.enabled = true,
     this.onSubmitted,
+    this.onChanged,
   });
   final bool enabled;
   final ValueChanged<String>? onSubmitted;
+  final ValueChanged<String>? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +31,12 @@ class SearchTextField extends StatelessWidget {
         ],
       ),
       child: TextField(
-        enabled: enabled,
-        cursorColor: AppColors.primaryColor,
-        decoration: customDecoration(context),
-        textInputAction: TextInputAction.search,
-        onSubmitted: onSubmitted,
-      ),
+          enabled: enabled,
+          cursorColor: AppColors.primaryColor,
+          decoration: customDecoration(context),
+          textInputAction: TextInputAction.search,
+          onSubmitted: onSubmitted,
+          onChanged: onChanged),
     );
   }
 

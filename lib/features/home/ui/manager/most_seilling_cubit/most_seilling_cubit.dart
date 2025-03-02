@@ -7,6 +7,7 @@ class MostSeillingCubit extends Cubit<MostSeillingState> {
   final HomeRepo homeRepo;
 
   Future<void> getMostSeillingProducts() async {
+    emit(MostSeillingLoading());
     final data = await homeRepo.getMostSellingProducts();
     data.fold(
       (failuer) {
