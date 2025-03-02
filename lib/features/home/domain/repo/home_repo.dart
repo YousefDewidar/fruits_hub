@@ -9,7 +9,9 @@ abstract class HomeRepo {
 
   // getOfferdProducts();
 
-  // searchProducts();
+  Future<Either<Failuer, List<ProductEntity>>> searchProducts({
+    required String query,
+  });
 
   // getNotification();
 }

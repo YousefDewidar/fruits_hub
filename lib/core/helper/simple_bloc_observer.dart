@@ -18,7 +18,7 @@ class SimpleBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
     log(
-      'the next state is ${change.nextState} and the current state is ${change.currentState}',
+      'current state is ${change.currentState} and the next state is ${change.nextState}',
     );
 
     super.onChange(bloc, change);

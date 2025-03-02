@@ -9,8 +9,10 @@ class SearchTextField extends StatelessWidget {
   const SearchTextField({
     super.key,
     this.enabled = true,
+    this.onSubmitted,
   });
   final bool enabled;
+  final ValueChanged<String>? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -28,27 +30,34 @@ class SearchTextField extends StatelessWidget {
       ),
       child: TextField(
         enabled: enabled,
-        decoration: InputDecoration(
-          hintText: S.of(context).searchHint,
-          hintStyle: TextStyles.regular13.copyWith(color: AppColors.greyColor),
-          filled: true,
-          fillColor: Colors.white,
-          contentPadding: const EdgeInsets.all(0),
-          border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(4)),
-            borderSide: BorderSide.none,
-          ),
-          prefixIcon: SvgPicture.asset(
-            Assets.imagesSearchIcon,
-            // ignore: deprecated_member_use
-            color: AppColors.primaryColor,
-            fit: BoxFit.scaleDown,
-          ),
-          suffixIcon: SvgPicture.asset(
-            Assets.imagesFilter,
-            fit: BoxFit.scaleDown,
-          ),
-        ),
+        cursorColor: AppColors.primaryColor,
+        decoration: customDecoration(context),
+        textInputAction: TextInputAction.search,
+        onSubmitted: onSubmitted,
+      ),
+    );
+  }
+
+  InputDecoration customDecoration(BuildContext context) {
+    return InputDecoration(
+      hintText: S.of(context).searchHint,
+      hintStyle: TextStyles.regular13.copyWith(color: AppColors.greyColor),
+      filled: true,
+      fillColor: Colors.white,
+      contentPadding: const EdgeInsets.all(0),
+      border: const OutlineInputBorder(
+        borderRadius: BorderRadius.all(Radius.circular(4)),
+        borderSide: BorderSide.none,
+      ),
+      prefixIcon: SvgPicture.asset(
+        Assets.imagesSearchIcon,
+        // ignore: deprecated_member_use
+        color: AppColors.primaryColor,
+        fit: BoxFit.scaleDown,
+      ),
+      suffixIcon: SvgPicture.asset(
+        Assets.imagesFilter,
+        fit: BoxFit.scaleDown,
       ),
     );
   }

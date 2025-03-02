@@ -20,6 +20,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: AppColors.primaryColor,
       controller: controller,
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -28,7 +29,6 @@ class CustomTextField extends StatelessWidget {
         return null;
       },
       onSaved: onSaved,
-
       style: TextStyles.semiBold16,
       decoration: InputDecoration(
         hintText: hint,

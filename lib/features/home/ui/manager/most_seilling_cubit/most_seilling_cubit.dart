@@ -4,7 +4,7 @@ import 'package:fruits_hub/features/home/ui/manager/most_seilling_cubit/most_sei
 
 class MostSeillingCubit extends Cubit<MostSeillingState> {
   MostSeillingCubit(this.homeRepo) : super(MostSeillingInitial());
-  HomeRepo homeRepo;
+  final HomeRepo homeRepo;
 
   Future<void> getMostSeillingProducts() async {
     final data = await homeRepo.getMostSellingProducts();

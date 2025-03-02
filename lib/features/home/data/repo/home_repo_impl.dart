@@ -15,9 +15,28 @@ class HomeRepoImpl extends HomeRepo {
     try {
       final dataMap = await database.getAllRecords(tableName: 'products');
 
-      List<ProductEntity> products = dataMap
-          .map((item) => ProductModel.fromMap(item))
-          .toList();
+      List<ProductEntity> products =
+          dataMap.map((item) => ProductModel.fromMap(item)).toList();
+      return right(products);
+    } catch (e) {
+      return left(Failuer(message: 'حدث خطأ ما حاول مرة أخرى'));
+    }
+  }
+
+  @override
+  Future<Either<Failuer, List<ProductEntity>>> searchProducts({
+    required String query,
+  }) async {
+    try {
+      final dataList = await database.search(
+        tableName: "products",
+        columnName: "title",
+        q: query,
+      );
+
+      List<ProductEntity> products =
+          dataList.map((item) => ProductModel.fromMap(item)).toList();
+
       return right(products);
     } catch (e) {
       return left(Failuer(message: 'حدث خطأ ما حاول مرة أخرى'));

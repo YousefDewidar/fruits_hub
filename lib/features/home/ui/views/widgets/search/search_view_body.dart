@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
-import 'package:fruits_hub/core/widgets/products_grid_view.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
+import 'package:fruits_hub/features/home/ui/manager/search_cubit/search_cubit.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/most_selling/app_bar_with_notification.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/search/products_result_grid_view_bloc_consumer.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/search/search_field.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -19,13 +22,7 @@ class SearchViewBody extends StatelessWidget {
         AppBarWithNotification(
           title: S.of(context).search,
         ),
-        const SliverToBoxAdapter(
-          child: Padding(
-            padding:
-                EdgeInsets.symmetric(horizontal: kHoripadding, vertical: 16),
-            child: SearchTextField(),
-          ),
-        ),
+        const SearchField(),
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kHoripadding),
@@ -90,7 +87,7 @@ class SearchViewBody extends StatelessWidget {
         ),
         const SliverVisibility(
           visible: true,
-          sliver: ProductsGridView(),
+          sliver: ProductsResultGridViewBlocConsumer(),
         ),
       ],
     );
