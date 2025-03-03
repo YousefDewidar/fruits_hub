@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/offer_card.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/home_widgets/offer_card.dart';
 
 class OfferListView extends StatelessWidget {
   const OfferListView({

@@ -2,33 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper/dummy_fruits.dart';
 import 'package:fruits_hub/core/widgets/in_app_notification.dart';
-import 'package:fruits_hub/features/home/ui/manager/most_seilling_cubit/most_seilling_cubit.dart';
-import 'package:fruits_hub/features/home/ui/manager/most_seilling_cubit/most_seilling_state.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/most_selling/products_grid_view.dart';
+import 'package:fruits_hub/features/home/ui/manager/products/products_cubit.dart';
+import 'package:fruits_hub/features/home/ui/manager/products/products_state.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/products/our_products_list_view.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class MostSellingGridViewBlocConsumer extends StatelessWidget {
-  const MostSellingGridViewBlocConsumer({
+class OurProductsListViewBlocConsumer extends StatelessWidget {
+  const OurProductsListViewBlocConsumer({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<MostSeillingCubit, MostSeillingState>(
+    return BlocConsumer<ProductsCubit, ProductsState>(
       listener: (context, state) {
-        if (state is MostSeillingFailure) {
+        if (state is ProductsFailure) {
           showNotification(context, state.message, NotiType.error);
         }
       },
       builder: (context, state) {
-        if (state is MostSeillingLoading) {
+        if (state is ProductsLoading) {
           return Skeletonizer.sliver(
-            child: ProductsGridView(
+            child: OurProductsListView(
               products: DummyFruits.getDummyFruitsList(),
             ),
           );
-        } else if (state is MostSeillingSuccess) {
-          return ProductsGridView(
+        } else if (state is ProductsSuccess) {
+          return OurProductsListView(
             products: state.products,
           );
         } else {

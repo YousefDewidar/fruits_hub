@@ -1,3 +1,4 @@
+import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/features/home/domain/entities/product_entity.dart';
 
 class DummyFruits {
@@ -6,7 +7,7 @@ class DummyFruits {
       title: 'Sample Fruit',
       desc: 'A delicious fruit description',
       price: 9.99,
-      img: 'assets/images/fruit.png',
+      img: Assets.imagesWatermelonTest,
       additionInfo: AdditionInfoEntity(
         calary: '100 cal',
         dateExpired: '2023-01-01',

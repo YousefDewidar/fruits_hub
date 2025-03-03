@@ -6,7 +6,8 @@ import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:svg_flutter/svg.dart';
 
 class CustomButtomNavBar extends StatefulWidget {
-  const CustomButtomNavBar({super.key});
+  final ValueChanged<int> onTap;
+  const CustomButtomNavBar({super.key, required this.onTap});
 
   @override
   State<CustomButtomNavBar> createState() => _CustomButtomNavBarState();
@@ -37,7 +38,11 @@ class _CustomButtomNavBarState extends State<CustomButtomNavBar> {
         selectedItemColor: AppColors.primaryColor,
         itemPadding: const EdgeInsets.only(top: 0, left: 15),
         currentIndex: _currentIndex,
-        onTap: (i) => setState(() => _currentIndex = i),
+        onTap: (i) {
+          _currentIndex = i;
+          widget.onTap(i);
+          setState(() {});
+        },
         items: [
           navBarItem(
             title: S.of(context).home,

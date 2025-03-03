@@ -48,5 +48,7 @@
   "notification": "Notifications",
   "selectAllRead": "Select All as Read",
   "new_notification": "New",
-  "searchNotFound": "Sorry... This product is not available now"
+  "searchNotFound": "Sorry... This product is not available now",
+  "all" : "All",
+  "ourProduct" : "Our Products"
 }

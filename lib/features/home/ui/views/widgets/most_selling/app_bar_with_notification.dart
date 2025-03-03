@@ -5,9 +5,11 @@ import 'package:fruits_hub/core/widgets/notification_icon.dart';
 
 class AppBarWithNotification extends StatelessWidget {
   final String title;
+  final bool hasBack;
   const AppBarWithNotification({
     super.key,
     required this.title,
+    this.hasBack = true,
   });
 
   @override
@@ -23,10 +25,12 @@ class AppBarWithNotification extends StatelessWidget {
           child: NotificationIcon(),
         ),
       ],
-      leading: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 5),
-        child: IconsBack(),
-      ),
+      leading: hasBack
+          ? const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 5),
+              child: IconsBack(),
+            )
+          : null,
       leadingWidth: 70,
       title: Text(
         title,

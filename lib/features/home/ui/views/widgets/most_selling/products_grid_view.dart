@@ -4,8 +4,8 @@ import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/most_selling/product_card.dart';
 import 'package:fruits_hub/features/home/domain/entities/product_entity.dart';
 
-class MostSellingGridView extends StatelessWidget {
-  const MostSellingGridView({
+class ProductsGridView extends StatelessWidget {
+  const ProductsGridView({
     super.key,
     required this.products,
   });

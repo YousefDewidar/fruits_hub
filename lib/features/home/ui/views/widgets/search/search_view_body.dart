@@ -3,7 +3,7 @@ import 'package:fruits_hub/features/home/ui/views/widgets/most_selling/app_bar_w
 import 'package:fruits_hub/features/home/ui/views/widgets/search/clear_all_text.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/search/products_result_grid_view_bloc_consumer.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/search/search_field.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/search/search_history_list_view.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/search/search_history_list.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/search/search_result_text.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 

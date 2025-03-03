@@ -48,5 +48,7 @@
   "notification": "الاشعارات",
   "selectAllRead": "تحديد الكل كمقروء",
   "new_notification": "جديد",
-  "searchNotFound": "عفوًا... هذا المنتج غير متوفر حاليا"
+  "searchNotFound": "عفوًا... هذا المنتج غير متوفر حاليا",
+  "all" : "الكل",
+  "ourProduct" : "منتجاتنا"
 }

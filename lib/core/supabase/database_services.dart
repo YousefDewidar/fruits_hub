@@ -24,6 +24,22 @@ class DatabaseServices {
     return await supabase.from(tableName).select().eq(columnName, value);
   }
 
+  Future<List<Map<String, dynamic>>> getOrderdRecordsWithLimit({
+    required String tableName,
+    required String orderBy,
+    required int limit,
+  }) async {
+    return await supabase
+        .from(tableName)
+        .select()
+        .gt(orderBy, 0)
+        .order(
+          orderBy,
+          ascending: false,
+        )
+        .limit(limit);
+  }
+
   Future<List<Map<String, dynamic>>> search({
     required String tableName,
     required String columnName,

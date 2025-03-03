@@ -4,9 +4,9 @@ import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/features/home/ui/views/widgets/most_selling/most_selling_grid_view_bloc_consumer.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/home_app_bar.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/most_selling_text_row.dart';
-import 'package:fruits_hub/features/home/ui/views/widgets/offer_list_view.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/home_widgets/home_app_bar.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/home_widgets/most_selling_text_row.dart';
+import 'package:fruits_hub/features/home/ui/views/widgets/home_widgets/offer_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({
@@ -38,17 +38,16 @@ class HomeViewBody extends StatelessWidget {
         ),
         const SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: kHoripadding),
-            child: Column(
-              children: [
-                SpaceV(12),
-                MostSellingTextRow(),
-                SpaceV(8),
-              ],
+              padding: EdgeInsets.only(
+              left: kHoripadding,
+              right: kHoripadding,
+              top: 12,
+              bottom: 8,
             ),
+            child: MostSellingTextRow(),
           ),
         ),
-        const ProductsGridViewBlocConsumer(),
+        const MostSellingGridViewBlocConsumer(),
         const SliverToBoxAdapter(child: SpaceV(16)),
       ],
     );

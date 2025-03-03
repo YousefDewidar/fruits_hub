@@ -12,10 +12,10 @@ class OfferCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 158,
-      margin: const EdgeInsets.only(left: 4),
+      margin: const EdgeInsets.only(left: 8),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Stack(
         children: [
@@ -33,12 +33,11 @@ class OfferCard extends StatelessWidget {
               clipper: CustomCurveClipper(),
               child: Container(
                 width: 180,
-                height: 150,
                 decoration: BoxDecoration(
                   color: bgColor,
                   borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(4),
-                    bottomRight: Radius.circular(4),
+                    topRight: Radius.circular(12),
+                    bottomRight: Radius.circular(12),
                   ),
                 ),
                 padding: const EdgeInsets.all(16),
