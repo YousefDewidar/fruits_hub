@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "apple": MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+        "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
         "clearAll": MessageLookupByLibrary.simpleMessage("Clear All"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("Confirm "),
         "createAcc":
@@ -47,9 +48,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
+        "haveProductsInCart": MessageLookupByLibrary.simpleMessage(
+            "You have 3 products in your cart"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "homeHello": MessageLookupByLibrary.simpleMessage("Good Morning !.."),
         "kilo": MessageLookupByLibrary.simpleMessage("Kilo"),
+        "kilogram": MessageLookupByLibrary.simpleMessage("Kg"),
         "lastSearch": MessageLookupByLibrary.simpleMessage("Last Search"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "more": MessageLookupByLibrary.simpleMessage("More"),

@@ -75,7 +75,15 @@ class _CustomButtomNavBarState extends State<CustomButtomNavBar> {
     required String activeIcon,
   }) {
     return SalomonBottomBarItem(
-      icon: SvgPicture.asset(inActiveIcon),
+      icon: SizedBox(
+        height: 40,
+        width: 60,
+        child: Center(
+          child: SvgPicture.asset(inActiveIcon,
+          height: 25,
+          ),
+        ),
+      ),
       activeIcon: CircleAvatar(
         backgroundColor: AppColors.primaryColor,
         child: SvgPicture.asset(activeIcon),

@@ -569,6 +569,36 @@ class S {
       args: [],
     );
   }
+
+  /// `You have 3 products in your cart`
+  String get haveProductsInCart {
+    return Intl.message(
+      'You have 3 products in your cart',
+      name: 'haveProductsInCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kg`
+  String get kilogram {
+    return Intl.message(
+      'Kg',
+      name: 'kilogram',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checkout`
+  String get checkout {
+    return Intl.message(
+      'Checkout',
+      name: 'checkout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

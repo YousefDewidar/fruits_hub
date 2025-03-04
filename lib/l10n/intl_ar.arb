@@ -49,6 +49,9 @@
   "selectAllRead": "تحديد الكل كمقروء",
   "new_notification": "جديد",
   "searchNotFound": "عفوًا... هذا المنتج غير متوفر حاليا",
-  "all" : "الكل",
-  "ourProduct" : "منتجاتنا"
+  "all": "الكل",
+  "ourProduct": "منتجاتنا",
+  "haveProductsInCart": "لديك 3 منتجات في سله التسوق",
+  "kilogram": "كجم",
+  "checkout": "الدفع"
 }

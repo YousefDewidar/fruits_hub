@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟"),
         "apple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة ابل"),
         "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
+        "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
         "clearAll": MessageLookupByLibrary.simpleMessage("حذف الكل"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("تاكيد "),
         "createAcc": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
@@ -47,9 +48,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "google": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
+        "haveProductsInCart":
+            MessageLookupByLibrary.simpleMessage("لديك 3 منتجات في سله التسوق"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "homeHello": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "kilo": MessageLookupByLibrary.simpleMessage("الكيلو"),
+        "kilogram": MessageLookupByLibrary.simpleMessage("كجم"),
         "lastSearch":
             MessageLookupByLibrary.simpleMessage("عمليات البحث الأخيرة"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),

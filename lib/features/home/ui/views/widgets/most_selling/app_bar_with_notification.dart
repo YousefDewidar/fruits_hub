@@ -6,10 +6,12 @@ import 'package:fruits_hub/core/widgets/notification_icon.dart';
 class AppBarWithNotification extends StatelessWidget {
   final String title;
   final bool hasBack;
+  final bool hasNoti;
   const AppBarWithNotification({
     super.key,
     required this.title,
     this.hasBack = true,
+    this.hasNoti = true,
   });
 
   @override
@@ -17,20 +19,26 @@ class AppBarWithNotification extends StatelessWidget {
     return SliverAppBar(
       automaticallyImplyLeading: false,
       backgroundColor: Colors.white,
-      elevation: 3,
+      scrolledUnderElevation: 0,
+      shadowColor: const Color.fromARGB(255, 26, 23, 23),
+      elevation: 60,
       pinned: true,
-      actions: const [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
-          child: NotificationIcon(),
+      actions: [
+        Visibility(
+          visible: hasNoti,
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: NotificationIcon(),
+          ),
         ),
       ],
-      leading: hasBack
-          ? const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 5),
-              child: IconsBack(),
-            )
-          : null,
+      leading: Visibility(
+        visible: hasBack,
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 5),
+          child: IconsBack(),
+        ),
+      ),
       leadingWidth: 70,
       title: Text(
         title,

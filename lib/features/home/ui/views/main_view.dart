@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lazy_indexed_stack/flutter_lazy_indexed_stack.dart';
 import 'package:fruits_hub/core/widgets/custom_nav_bar.dart';
 import 'package:fruits_hub/features/home/ui/views/home_view.dart';
+import 'package:fruits_hub/features/home/ui/views/cart_view.dart';
 import 'package:fruits_hub/features/home/ui/views/products_view.dart';
 
 class MainView extends StatefulWidget {
@@ -29,7 +30,7 @@ class _MainViewState extends State<MainView> {
           children: const [
             HomeView(),
             ProductsView(),
-            HomeView(),
+            CartView(),
             HomeView(),
           ],
         ),
