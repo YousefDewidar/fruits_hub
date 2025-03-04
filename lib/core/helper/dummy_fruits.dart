@@ -1,5 +1,5 @@
 import 'package:fruits_hub/core/utils/app_images.dart';
-import 'package:fruits_hub/features/home/domain/entities/product_entity.dart';
+import 'package:fruits_hub/features/main/domain/entities/product_entity.dart';
 
 class DummyFruits {
   static ProductEntity getDummyFruit() {
