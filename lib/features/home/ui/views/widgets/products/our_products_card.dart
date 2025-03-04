@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/features/home/domain/entities/product_entity.dart';
 
 class OurProductCard extends StatelessWidget {
@@ -18,7 +19,7 @@ class OurProductCard extends StatelessWidget {
             radius: 32,
             backgroundColor: const Color(0xffF3F5F7),
             child: Image.asset(
-              product.img,
+              Assets.imagesWatermelonTest,
               width: 36,
             ),
           ),

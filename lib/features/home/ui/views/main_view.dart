@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lazy_indexed_stack/flutter_lazy_indexed_stack.dart';
 import 'package:fruits_hub/core/widgets/custom_nav_bar.dart';
 import 'package:fruits_hub/features/home/ui/views/home_view.dart';
 import 'package:fruits_hub/features/home/ui/views/products_view.dart';
@@ -11,12 +12,6 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  final List<Widget> _pages = const [
-    HomeView(),
-    ProductsView(),
-    HomeView(),
-    HomeView(),
-  ];
   int curPage = 0;
 
   @override
@@ -29,7 +24,15 @@ class _MainViewState extends State<MainView> {
         },
       ),
       body: SafeArea(
-        child: _pages[curPage],
+        child: LazyIndexedStack(
+          index: curPage,
+          children: const [
+            HomeView(),
+            ProductsView(),
+            HomeView(),
+            HomeView(),
+          ],
+        ),
       ),
     );
   }

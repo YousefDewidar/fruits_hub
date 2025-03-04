@@ -20,7 +20,9 @@ class OurProductsListView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           padding: const EdgeInsets.symmetric(horizontal: kHoripadding),
           itemBuilder: (context, index) {
-            return OurProductCard(product: products[index]);
+            return OurProductCard(
+              product: products[index],
+            );
           },
         ),
       ),

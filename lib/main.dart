@@ -16,7 +16,6 @@ void main() async {
     anonKey: kSupabaseAnonKey,
   );
   Bloc.observer = SimpleBlocObserver();
-
   await setupLocator();
   runApp(const FruitsHub());
 }
@@ -28,7 +27,7 @@ class FruitsHub extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme:
-          ThemeData(fontFamily: 'cairo', scaffoldBackgroundColor: Colors.white),
+          ThemeData(fontFamily: 'cairo', scaffoldBackgroundColor: Colors.white,),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -39,7 +38,7 @@ class FruitsHub extends StatelessWidget {
       locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: Routes.splash,
+      initialRoute: Routes.home,
     );
   }
 }
