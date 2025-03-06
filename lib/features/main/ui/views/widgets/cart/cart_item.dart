@@ -66,7 +66,7 @@ class CartItem extends StatelessWidget {
                 child: SvgPicture.asset(Assets.imagesTrash),
               ),
               Text(
-                '${product.product.price} ${S.of(context).egp}',
+                '${product.calcTotalPriceForItem()} ${S.of(context).egp}',
                 style:
                     TextStyles.bold16.copyWith(color: AppColors.secondaryColor),
               ),

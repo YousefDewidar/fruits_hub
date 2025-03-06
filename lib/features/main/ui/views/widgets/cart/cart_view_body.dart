@@ -27,7 +27,7 @@ class CartViewBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15),
             child: Text(
-              "${S.current.haveProductsInCart1} ${context.watch<CartCubit>().cartList.length} ${S.current.haveProductsInCart2}",
+              "${S.current.haveProductsInCart1} ${context.watch<CartCubit>().totalCount} ${S.current.haveProductsInCart2}",
               textAlign: TextAlign.center,
               style: TextStyles.regular13.copyWith(
                 color: const Color(0xFF1B5E37),

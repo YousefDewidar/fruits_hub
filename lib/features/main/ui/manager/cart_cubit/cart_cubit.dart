@@ -7,6 +7,7 @@ class CartCubit extends Cubit<CartState> {
 
   List<CartItemEntity> cartList = [];
   num totalPrice = 0;
+  int totalCount = 0;
 
   void addToCart(CartItemEntity product) {
     bool hasProduct = cartList.contains(product);
@@ -23,9 +24,9 @@ class CartCubit extends Cubit<CartState> {
     bool hasProduct = cartList.contains(product);
     if (hasProduct && product.count > 1) {
       cartList.firstWhere((e) => e == product).count--;
+      calcTotalPrice();
+      emit(RemovedFromCart());
     }
-    calcTotalPrice();
-    emit(RemovedFromCart());
   }
 
   void removeItem(CartItemEntity product) {
@@ -36,8 +37,10 @@ class CartCubit extends Cubit<CartState> {
 
   void calcTotalPrice() {
     totalPrice = 0;
+    totalCount = 0;
     for (var item in cartList) {
       totalPrice += item.calcTotalPriceForItem();
+      totalCount += item.count;
     }
   }
 }

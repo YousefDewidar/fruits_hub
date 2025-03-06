@@ -91,7 +91,7 @@ class _CustomButtomNavBarState extends State<CustomButtomNavBar> {
                     backgroundColor: AppColors.primaryColor,
                     radius: 10,
                     child: Text(
-                      context.watch<CartCubit>().cartList.length.toString(),
+                      context.watch<CartCubit>().totalCount.toString(),
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 10,
