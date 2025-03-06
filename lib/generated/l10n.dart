@@ -609,6 +609,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Shipping`
+  String get shipping {
+    return Intl.message(
+      'Shipping',
+      name: 'shipping',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message(
+      'Payment',
+      name: 'payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message(
+      'Address',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Review`
+  String get review {
+    return Intl.message(
+      'Review',
+      name: 'review',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay Cash`
+  String get payCash {
+    return Intl.message(
+      'Pay Cash',
+      name: 'payCash',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get payCash2 {
+    return Intl.message(
+      '',
+      name: 'payCash2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay Online`
+  String get payOnline {
+    return Intl.message(
+      'Pay Online',
+      name: 'payOnline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get payOnline2 {
+    return Intl.message(
+      '',
+      name: 'payOnline2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get phone {
+    return Intl.message(
+      'Phone',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Street Name`
+  String get address2 {
+    return Intl.message(
+      'Street Name',
+      name: 'address2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Free`
+  String get free {
+    return Intl.message(
+      'Free',
+      name: 'free',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

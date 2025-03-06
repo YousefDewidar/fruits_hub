@@ -3,7 +3,7 @@ import 'package:fruits_hub/features/main/domain/entities/product_entity.dart';
 class AdditionInfoModel extends AdditionInfoEntity {
   final String? dateExpiredd;
   final String? calaryy;
-  AdditionInfoModel({
+  const AdditionInfoModel({
     this.dateExpiredd,
     this.calaryy,
   }) : super(

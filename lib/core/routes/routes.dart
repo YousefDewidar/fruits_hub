@@ -7,8 +7,8 @@ abstract class Routes {
   static const forgetPass = 'forgetPass';
   static const verify = 'verify';
   static const newPass = 'newPass';
-  static const mostSelling = 'mostSelling';
   static const search = 'search';
   static const notification = 'notification';
+  static const checkout = 'checkout';
 
 }

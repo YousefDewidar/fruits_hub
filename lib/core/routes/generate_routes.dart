@@ -5,6 +5,7 @@ import 'package:fruits_hub/features/auth/ui/views/login_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/new_password_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
+import 'package:fruits_hub/features/checkout/ui/views/checkout_view.dart';
 import 'package:fruits_hub/features/main/ui/views/main_view.dart';
 import 'package:fruits_hub/features/main/ui/views/notification_view.dart';
 import 'package:fruits_hub/features/main/ui/views/search_view.dart';
@@ -30,12 +31,12 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => const LandingView());
     case Routes.home:
       return MaterialPageRoute(builder: (context) => const MainView());
-    // case Routes.mostSelling:
-    //   return MaterialPageRoute(builder: (context) => const MostSellingView());
     case Routes.search:
       return MaterialPageRoute(builder: (context) => const SearchView());
     case Routes.notification:
       return MaterialPageRoute(builder: (context) => const NotificationView());
+    case Routes.checkout:
+      return MaterialPageRoute(builder: (context) => const CheckoutView());
     default:
       return null;
   }

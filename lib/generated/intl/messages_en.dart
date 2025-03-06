@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "address": MessageLookupByLibrary.simpleMessage("Address"),
+        "address2": MessageLookupByLibrary.simpleMessage("Street Name"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "allreadyhaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
@@ -46,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forget Password"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "free": MessageLookupByLibrary.simpleMessage("Free"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
         "haveProductsInCart1": MessageLookupByLibrary.simpleMessage("You have"),
@@ -67,15 +70,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "newPassDone": MessageLookupByLibrary.simpleMessage(
             "Password changed successfully"),
         "new_notification": MessageLookupByLibrary.simpleMessage("New"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noSearch": MessageLookupByLibrary.simpleMessage("No Search Results"),
         "notification": MessageLookupByLibrary.simpleMessage("Notifications"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "ourProduct": MessageLookupByLibrary.simpleMessage("Our Products"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "payCash": MessageLookupByLibrary.simpleMessage("Pay Cash"),
+        "payCash2": MessageLookupByLibrary.simpleMessage(""),
+        "payOnline": MessageLookupByLibrary.simpleMessage("Pay Online"),
+        "payOnline2": MessageLookupByLibrary.simpleMessage(""),
+        "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "products": MessageLookupByLibrary.simpleMessage("Products"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "required":
             MessageLookupByLibrary.simpleMessage("This field is required"),
+        "review": MessageLookupByLibrary.simpleMessage("Review"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchHint": MessageLookupByLibrary.simpleMessage("Search......."),
         "searchNotFound": MessageLookupByLibrary.simpleMessage(
@@ -83,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchRes": MessageLookupByLibrary.simpleMessage("Search Results"),
         "selectAllRead":
             MessageLookupByLibrary.simpleMessage("Select All as Read"),
+        "shipping": MessageLookupByLibrary.simpleMessage("Shipping"),
         "shopNow": MessageLookupByLibrary.simpleMessage("Shop Now"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "signupSuccess": MessageLookupByLibrary.simpleMessage(

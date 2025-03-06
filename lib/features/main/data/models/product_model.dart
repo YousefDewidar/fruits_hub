@@ -14,7 +14,7 @@ class ProductModel extends ProductEntity {
   final bool isFeatured;
   final num soldTimes;
 
-  ProductModel({
+  const ProductModel({
     required this.id,
     required this.titlee,
     required this.descc,

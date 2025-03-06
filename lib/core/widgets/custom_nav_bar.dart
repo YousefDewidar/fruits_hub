@@ -85,19 +85,20 @@ class _CustomButtomNavBarState extends State<CustomButtomNavBar> {
             if (context.watch<CartCubit>().cartList.isNotEmpty &&
                 title == S.of(context).cart)
               Positioned(
-                  right: 0,
-                  top: 0,
-                  child: CircleAvatar(
-                    backgroundColor: AppColors.primaryColor,
-                    radius: 10,
-                    child: Text(
-                      context.watch<CartCubit>().totalCount.toString(),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 10,
-                      ),
+                right: 0,
+                top: 0,
+                child: CircleAvatar(
+                  backgroundColor: AppColors.primaryColor,
+                  radius: 10,
+                  child: Text(
+                    context.watch<CartCubit>().totalCount.toString(),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
                     ),
-                  )),
+                  ),
+                ),
+              ),
             Center(
               child: SvgPicture.asset(
                 inActiveIcon,

@@ -3,7 +3,7 @@ import 'package:fruits_hub/features/main/domain/entities/product_entity.dart';
 
 class DummyFruits {
   static ProductEntity getDummyFruit() {
-    return ProductEntity(
+    return const ProductEntity(
       title: 'Sample Fruit',
       desc: 'A delicious fruit description',
       price: 9.99,

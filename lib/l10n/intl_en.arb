@@ -54,5 +54,17 @@
   "haveProductsInCart1": "You have",
   "haveProductsInCart2": "products in your cart",
   "kilogram": "Kg",
-  "checkout": "Checkout"
+  "checkout": "Checkout",
+  "shipping": "Shipping",
+  "payment": "Payment",
+  "address": "Address",
+  "review": "Review",
+  "next": "Next",
+  "payCash": "Pay Cash",
+  "payCash2": "",
+  "payOnline": "Pay Online",
+  "payOnline2": "",
+  "phone": "Phone",
+  "address2": "Street Name",
+  "free": "Free"
 }

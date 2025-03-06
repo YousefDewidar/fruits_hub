@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "address": MessageLookupByLibrary.simpleMessage("العنوان"),
+        "address2": MessageLookupByLibrary.simpleMessage("اسم الشارع"),
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
         "allreadyhaveAccount":
             MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟"),
@@ -46,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
+        "free": MessageLookupByLibrary.simpleMessage("مجاني"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "google": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
         "haveProductsInCart1": MessageLookupByLibrary.simpleMessage("لديك"),
@@ -69,14 +72,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "newPassDone":
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "new_notification": MessageLookupByLibrary.simpleMessage("جديد"),
+        "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "noSearch": MessageLookupByLibrary.simpleMessage("لا يوجد نتائج بحث"),
         "notification": MessageLookupByLibrary.simpleMessage("الاشعارات"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "ourProduct": MessageLookupByLibrary.simpleMessage("منتجاتنا"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "payCash": MessageLookupByLibrary.simpleMessage("الدفع عند الاستلام"),
+        "payCash2":
+            MessageLookupByLibrary.simpleMessage("التسليم في العنوان المحدد"),
+        "payOnline": MessageLookupByLibrary.simpleMessage("الدفع عبر الانترنت"),
+        "payOnline2":
+            MessageLookupByLibrary.simpleMessage("يرجي تحديد طريقة الدفع"),
+        "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+        "phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
         "required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+        "review": MessageLookupByLibrary.simpleMessage("المراجعة"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchHint": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "searchNotFound": MessageLookupByLibrary.simpleMessage(
@@ -84,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchRes": MessageLookupByLibrary.simpleMessage("نتائج البحث"),
         "selectAllRead":
             MessageLookupByLibrary.simpleMessage("تحديد الكل كمقروء"),
+        "shipping": MessageLookupByLibrary.simpleMessage("الشحن"),
         "shopNow": MessageLookupByLibrary.simpleMessage("تسوق الآن"),
         "signUp": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "signupSuccess":

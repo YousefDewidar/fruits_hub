@@ -54,5 +54,17 @@
   "haveProductsInCart1": "لديك",
   "haveProductsInCart2": "منتجات في سله التسوق",
   "kilogram": "كجم",
-  "checkout": "الدفع"
+  "checkout": "الدفع",
+  "shipping": "الشحن",
+  "payment": "الدفع",
+  "address": "العنوان",
+  "review": "المراجعة",
+  "next": "التالي",
+  "payCash": "الدفع عند الاستلام",
+  "payCash2": "التسليم في العنوان المحدد",
+  "payOnline": "الدفع عبر الانترنت",
+  "payOnline2": "يرجي تحديد طريقة الدفع",
+  "phone": "رقم الهاتف",
+  "address2": "اسم الشارع",
+  "free": "مجاني"
 }

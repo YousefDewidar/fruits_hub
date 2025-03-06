@@ -28,7 +28,9 @@ class MostSellingTextRow extends StatelessWidget {
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
-                      return MostSellingView(products: state.products);
+                      return MostSellingView(
+                        products: state.products,
+                      );
                     },
                   ));
                 },
