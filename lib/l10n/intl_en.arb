@@ -49,9 +49,10 @@
   "selectAllRead": "Select All as Read",
   "new_notification": "New",
   "searchNotFound": "Sorry... This product is not available now",
-  "all" : "All",
-  "ourProduct" : "Our Products",
-  "haveProductsInCart" : "You have 3 products in your cart",
-  "kilogram" : "Kg",
-  "checkout" : "Checkout"
+  "all": "All",
+  "ourProduct": "Our Products",
+  "haveProductsInCart1": "You have",
+  "haveProductsInCart2": "products in your cart",
+  "kilogram": "Kg",
+  "checkout": "Checkout"
 }

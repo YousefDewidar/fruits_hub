@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
+import 'package:fruits_hub/features/main/domain/entities/cart_item_entity.dart';
+import 'package:fruits_hub/features/main/ui/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits_hub/features/main/ui/views/widgets/cart/cart_item.dart';
 
 class CartListView extends StatelessWidget {
@@ -9,14 +12,15 @@ class CartListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<CartItemEntity> cartList = context.watch<CartCubit>().cartList;
     return Expanded(
       child: ListView.separated(
-        itemCount: 10,
+        itemCount: cartList.length,
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: kHoripadding),
-            child: CartItem(),
+          return  Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kHoripadding),
+            child: CartItem(product: cartList[index]),
           );
         },
         separatorBuilder: (context, index) {

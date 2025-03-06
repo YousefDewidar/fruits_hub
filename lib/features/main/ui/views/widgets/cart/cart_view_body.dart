@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
+import 'package:fruits_hub/features/main/ui/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits_hub/features/main/ui/views/widgets/cart/cart_list_view.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
@@ -25,7 +27,7 @@ class CartViewBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15),
             child: Text(
-              S.current.haveProductsInCart,
+              "${S.current.haveProductsInCart1} ${context.watch<CartCubit>().cartList.length} ${S.current.haveProductsInCart2}",
               textAlign: TextAlign.center,
               style: TextStyles.regular13.copyWith(
                 color: const Color(0xFF1B5E37),
@@ -38,11 +40,12 @@ class CartViewBody extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kHoripadding),
           child: CustomButton(
-            title: "${S.of(context).checkout} 120 ${S.of(context).egp}",
+            title:
+                "${S.of(context).checkout} ${context.watch<CartCubit>().totalPrice} ${S.of(context).egp}",
             onPressed: () {},
           ),
         ),
-        const SpaceV(16),
+        const SpaceV(10),
       ],
     );
   }

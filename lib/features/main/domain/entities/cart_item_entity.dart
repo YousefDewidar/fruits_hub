@@ -9,11 +9,15 @@ class CartItemEntity extends Equatable {
 
   CartItemEntity({
     required this.product,
-    this.count = 0,
+    this.count = 1,
   });
 
   int calcWeight() {
     return count * 1;
+  }
+
+  num calcTotalPriceForItem() {
+    return count * product.price;
   }
 
   @override

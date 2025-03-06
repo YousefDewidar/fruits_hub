@@ -1,12 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/fav_icon.dart';
+import 'package:fruits_hub/core/widgets/in_app_notification.dart';
 import 'package:fruits_hub/core/widgets/space.dart';
+import 'package:fruits_hub/features/main/domain/entities/cart_item_entity.dart';
 import 'package:fruits_hub/features/main/domain/entities/product_entity.dart';
+import 'package:fruits_hub/features/main/ui/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class ProductCard extends StatelessWidget {
@@ -61,7 +65,16 @@ class ProductCard extends StatelessWidget {
             bottom: 16,
             left: 10,
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                showNotification(
+                  context,
+                  'تم اضافة ${product.title} إلي السلة',
+                  NotiType.success,
+                );
+                context.read<CartCubit>().addToCart(
+                      CartItemEntity(product: product),
+                    );
+              },
               child: const CircleAvatar(
                 backgroundColor: AppColors.primaryColor,
                 child: Icon(Icons.add, color: Colors.white),
@@ -73,4 +86,3 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
-

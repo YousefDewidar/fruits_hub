@@ -48,8 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "google": MessageLookupByLibrary.simpleMessage("Sign in with Google"),
-        "haveProductsInCart": MessageLookupByLibrary.simpleMessage(
-            "You have 3 products in your cart"),
+        "haveProductsInCart1": MessageLookupByLibrary.simpleMessage("You have"),
+        "haveProductsInCart2":
+            MessageLookupByLibrary.simpleMessage("products in your cart"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "homeHello": MessageLookupByLibrary.simpleMessage("Good Morning !.."),
         "kilo": MessageLookupByLibrary.simpleMessage("Kilo"),

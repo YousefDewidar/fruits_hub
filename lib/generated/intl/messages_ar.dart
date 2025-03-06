@@ -48,8 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "google": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
-        "haveProductsInCart":
-            MessageLookupByLibrary.simpleMessage("لديك 3 منتجات في سله التسوق"),
+        "haveProductsInCart1": MessageLookupByLibrary.simpleMessage("لديك"),
+        "haveProductsInCart2":
+            MessageLookupByLibrary.simpleMessage("منتجات في سله التسوق"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "homeHello": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "kilo": MessageLookupByLibrary.simpleMessage("الكيلو"),

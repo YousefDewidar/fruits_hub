@@ -570,11 +570,21 @@ class S {
     );
   }
 
-  /// `You have 3 products in your cart`
-  String get haveProductsInCart {
+  /// `You have`
+  String get haveProductsInCart1 {
     return Intl.message(
-      'You have 3 products in your cart',
-      name: 'haveProductsInCart',
+      'You have',
+      name: 'haveProductsInCart1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `products in your cart`
+  String get haveProductsInCart2 {
+    return Intl.message(
+      'products in your cart',
+      name: 'haveProductsInCart2',
       desc: '',
       args: [],
     );
