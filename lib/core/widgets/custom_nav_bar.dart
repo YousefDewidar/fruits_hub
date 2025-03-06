@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:fruits_hub/features/main/ui/manager/cart_cubit/cart_cubit.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:svg_flutter/svg.dart';
@@ -78,10 +80,31 @@ class _CustomButtomNavBarState extends State<CustomButtomNavBar> {
       icon: SizedBox(
         height: 40,
         width: 60,
-        child: Center(
-          child: SvgPicture.asset(inActiveIcon,
-          height: 25,
-          ),
+        child: Stack(
+          children: [
+            if (context.watch<CartCubit>().cartList.isNotEmpty &&
+                title == S.of(context).cart)
+              Positioned(
+                  right: 0,
+                  top: 0,
+                  child: CircleAvatar(
+                    backgroundColor: AppColors.primaryColor,
+                    radius: 10,
+                    child: Text(
+                      context.watch<CartCubit>().cartList.length.toString(),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                      ),
+                    ),
+                  )),
+            Center(
+              child: SvgPicture.asset(
+                inActiveIcon,
+                height: 25,
+              ),
+            ),
+          ],
         ),
       ),
       activeIcon: CircleAvatar(
