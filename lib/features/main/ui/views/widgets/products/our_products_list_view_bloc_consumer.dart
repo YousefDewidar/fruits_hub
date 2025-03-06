@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper/dummy_fruits.dart';
 import 'package:fruits_hub/core/widgets/in_app_notification.dart';
-import 'package:fruits_hub/features/main/ui/manager/products/products_cubit.dart';
-import 'package:fruits_hub/features/main/ui/manager/products/products_state.dart';
+import 'package:fruits_hub/features/main/ui/manager/products_cubit/products_cubit.dart';
+import 'package:fruits_hub/features/main/ui/manager/products_cubit/products_state.dart';
 import 'package:fruits_hub/features/main/ui/views/widgets/products/our_products_list_view.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 

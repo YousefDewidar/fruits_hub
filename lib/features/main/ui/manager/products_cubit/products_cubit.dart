@@ -1,7 +1,7 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/features/main/domain/repo/home_repo.dart';
-import 'package:fruits_hub/features/main/ui/manager/products/products_state.dart';
+import 'package:fruits_hub/features/main/ui/manager/products_cubit/products_state.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
   ProductsCubit(this.homeRepo) : super(ProductsInitial());

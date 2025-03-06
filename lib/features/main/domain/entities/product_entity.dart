@@ -1,4 +1,6 @@
-class ProductEntity {
+import 'package:equatable/equatable.dart';
+
+class ProductEntity extends Equatable {
   final String title;
   final String desc;
   final num price;
@@ -8,8 +10,7 @@ class ProductEntity {
   final String img;
   final AdditionInfoEntity additionInfo;
 
-
-  ProductEntity({
+  const ProductEntity({
     required this.title,
     required this.desc,
     required this.price,
@@ -19,13 +20,19 @@ class ProductEntity {
     required this.img,
     required this.additionInfo,
   });
+
+  @override
+  List<Object?> get props => [title, desc, price];
 }
 
-class AdditionInfoEntity {
+class AdditionInfoEntity extends Equatable {
   final String? dateExpired;
   final String? calary;
-  AdditionInfoEntity({
+  const AdditionInfoEntity({
     this.dateExpired,
     this.calary,
   });
+
+  @override
+  List<Object?> get props => [dateExpired, calary];
 }
