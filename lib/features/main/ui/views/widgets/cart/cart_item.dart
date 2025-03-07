@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
@@ -28,8 +29,22 @@ class CartItem extends StatelessWidget {
           Container(
             width: 73,
             height: 92,
+            padding: const EdgeInsets.all(5),
             color: AppColors.productColor,
-            child: Center(child: Image.asset(Assets.imagesWatermelonTest)),
+            child: CachedNetworkImage(
+              imageUrl: product.product.img,
+              placeholder: (context, url) => const Center(
+                child: CircularProgressIndicator(
+                  color: AppColors.primaryColor,
+                ),
+              ),
+              errorWidget: (context, url, error) => const Center(
+                child: Icon(
+                  Icons.image_not_supported_outlined,
+                  size: 50,
+                ),
+              ),
+            ),
           ),
           const SpaceH(17),
           Column(

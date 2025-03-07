@@ -1,5 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/features/main/domain/entities/product_entity.dart';
 
 class OurProductCard extends StatelessWidget {
@@ -18,9 +19,22 @@ class OurProductCard extends StatelessWidget {
           CircleAvatar(
             radius: 32,
             backgroundColor: const Color(0xffF3F5F7),
-            child: Image.asset(
-              Assets.imagesWatermelonTest,
-              width: 36,
+            child: Padding(
+              padding: const EdgeInsets.all(6),
+              child: CachedNetworkImage(
+                imageUrl: product.img,
+                placeholder: (context, url) => const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+                errorWidget: (context, url, error) => const Center(
+                  child: Icon(
+                    Icons.image_not_supported_outlined,
+                    size: 50,
+                  ),
+                ),
+              ),
             ),
           ),
           const SizedBox(height: 8),

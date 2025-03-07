@@ -31,6 +31,7 @@ dependencies:
   skeletonizer: ^1.4.3
   flutter_lazy_indexed_stack: ^0.0.6
   equatable: ^2.0.7
+  cached_network_image:
 
 dev_dependencies:
   flutter_test:

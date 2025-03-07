@@ -1,9 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:fruits_hub/core/utils/app_colors.dart';
-import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/fav_icon.dart';
 import 'package:fruits_hub/core/widgets/in_app_notification.dart';
@@ -34,7 +33,22 @@ class ProductCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SpaceV(6),
-                Center(child: Image.asset(Assets.imagesWatermelonTest)),
+                Center(
+                  child: CachedNetworkImage(
+                    imageUrl: product.img,
+                    placeholder: (context, url) => const Center(
+                      child: CircularProgressIndicator(
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                    errorWidget: (context, url, error) => const Center(
+                      child: Icon(
+                        Icons.image_not_supported_outlined,
+                        size: 50,
+                      ),
+                    ),
+                  ),
+                ),
                 const Spacer(),
                 Text(
                   product.title,
