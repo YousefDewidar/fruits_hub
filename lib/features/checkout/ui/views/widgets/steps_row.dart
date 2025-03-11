@@ -10,8 +10,10 @@ class StepsRow extends StatelessWidget {
   const StepsRow({
     super.key,
     required this.curPage,
+    required this.pageController,
   });
   final int curPage;
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,13 @@ class StepsRow extends StatelessWidget {
         (index) {
           return Expanded(
             child: curPage >= index
-                ? ActiveStep(title: getStepsTitle()[index])
+                ? InkWell(
+                    onTap: () => pageController.animateToPage(
+                          index,
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn,
+                        ),
+                    child: ActiveStep(title: getStepsTitle()[index]))
                 : InActiveStep(title: getStepsTitle()[index], index: index),
           );
         },

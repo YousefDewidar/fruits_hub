@@ -22,6 +22,12 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   void initState() {
     super.initState();
     pageController = PageController();
+    pageController.addListener(
+      () {
+        curPage = pageController.page!.toInt();
+        setState(() {});
+      },
+    );
   }
 
   @override
@@ -30,9 +36,14 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
     super.dispose();
   }
 
-  void getCurPage() {
-    curPage = pageController.page!.toInt();
-    setState(() {});
+  String getTextForButton() {
+    if (curPage == 2) {
+      return 'تأكيد & استمرار';
+    } else if (curPage == 3) {
+      return 'تأكيد الطلب';
+    } else {
+      return S.current.next;
+    }
   }
 
   @override
@@ -42,22 +53,20 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          CheckoutAppBar(
-            title: getStepsTitle()[curPage],
-          ),
+          CheckoutAppBar(title: getStepsTitle()[curPage]),
           const SpaceV(16),
-          StepsRow(curPage: curPage),
+          StepsRow(curPage: curPage, pageController: pageController),
           const SpaceV(24),
           CheckoutPageView(pageController: pageController),
           const SpaceV(24),
           CustomButton(
-            title: S.current.next,
+            title: getTextForButton(),
             onPressed: () async {
               await pageController.nextPage(
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeIn,
               );
-              getCurPage();
+              // getCurPage();
             },
           ),
           const SpaceV(50),

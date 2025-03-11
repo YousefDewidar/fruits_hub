@@ -74,6 +74,10 @@ class Assets {
   /// assets/images/page_view_item2_image.svg
   static const String imagesPageViewItem2Image = "assets/images/page_view_item2_image.svg";
 
+  /// Assets for imagesPaypal
+  /// assets/images/Paypal.svg
+  static const String imagesPaypal = "assets/images/Paypal.svg";
+
   /// Assets for imagesPlant
   /// assets/images/plant.svg
   static const String imagesPlant = "assets/images/plant.svg";

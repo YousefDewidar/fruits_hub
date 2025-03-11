@@ -38,7 +38,7 @@ class FruitsHub extends StatelessWidget {
       locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: Routes.home,
+      initialRoute: Routes.checkout,
     );
   }
 }
