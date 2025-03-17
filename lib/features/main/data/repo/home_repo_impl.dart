@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:fruits_hub/core/errors/custom_exception.dart';
 import 'package:fruits_hub/core/supabase/database_services.dart';
@@ -23,7 +21,6 @@ class HomeRepoImpl extends HomeRepo {
       List<ProductEntity> products =
           dataMap.map((item) => ProductModel.fromMap(item)).toList();
 
-      log(products.toString());
       return right(products);
     } catch (e) {
       return left(Failuer(message: 'حدث خطأ ما حاول مرة أخرى'));

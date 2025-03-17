@@ -6,6 +6,7 @@ import 'package:fruits_hub/features/auth/ui/views/new_password_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/ui/views/verify_code_view.dart';
 import 'package:fruits_hub/features/checkout/ui/views/checkout_view.dart';
+import 'package:fruits_hub/features/main/domain/entities/cart_item_entity.dart';
 import 'package:fruits_hub/features/main/ui/views/main_view.dart';
 import 'package:fruits_hub/features/main/ui/views/notification_view.dart';
 import 'package:fruits_hub/features/main/ui/views/search_view.dart';
@@ -36,7 +37,9 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
     case Routes.notification:
       return MaterialPageRoute(builder: (context) => const NotificationView());
     case Routes.checkout:
-      return MaterialPageRoute(builder: (context) => const CheckoutView());
+      return MaterialPageRoute(builder: (context) =>  CheckoutView(
+        cartList: setting.arguments as List<CartItemEntity>,
+      ));
     default:
       return null;
   }

@@ -5,10 +5,12 @@ import 'package:fruits_hub/core/widgets/space.dart';
 import 'package:fruits_hub/features/checkout/ui/views/widgets/checkout_appbar.dart';
 import 'package:fruits_hub/features/checkout/ui/views/widgets/checkout_page_view.dart';
 import 'package:fruits_hub/features/checkout/ui/views/widgets/steps_row.dart';
+import 'package:fruits_hub/features/main/domain/entities/cart_item_entity.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class CheckoutViewBody extends StatefulWidget {
-  const CheckoutViewBody({super.key});
+  final List<CartItemEntity> cartList;
+  const CheckoutViewBody({super.key, required this.cartList});
 
   @override
   State<CheckoutViewBody> createState() => _CheckoutViewBodyState();

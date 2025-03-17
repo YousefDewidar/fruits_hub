@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:fruits_hub/core/helper/user_data.dart';
 import 'package:fruits_hub/core/supabase/database_services.dart';
@@ -28,7 +26,6 @@ class SupabaseRepoImpl implements AuthRepo {
       await addUserToDatabase(user);
       return right(user);
     } catch (e) {
-      log(e.toString());
       if (e is AuthException) {
         return left(Failuer(message: e.message));
       }

@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/features/checkout/ui/views/widgets/checkout_view_body.dart';
+import 'package:fruits_hub/features/main/domain/entities/cart_item_entity.dart';
 
 class CheckoutView extends StatelessWidget {
-  const CheckoutView({super.key});
+  final List<CartItemEntity> cartList;
+
+  const CheckoutView({super.key, required this.cartList});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: CheckoutViewBody(),
+        child: CheckoutViewBody(
+          cartList: cartList,
+        ),
       ),
     );
   }

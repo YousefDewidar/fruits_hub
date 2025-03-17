@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/routes/routes.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constant.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
@@ -40,9 +41,17 @@ class CartViewBody extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kHoripadding),
           child: CustomButton(
+            isEnabled: context.read<CartCubit>().cartList.isNotEmpty,
             title:
                 "${S.of(context).checkout} ${context.watch<CartCubit>().totalPrice} ${S.of(context).egp}",
-            onPressed: () {},
+            onPressed: () {
+              if (context.read<CartCubit>().cartList.isEmpty) return;
+              Navigator.pushNamed(
+                context,
+                Routes.checkout,
+                arguments: context.read<CartCubit>().cartList,
+              );
+            },
           ),
         ),
         const SpaceV(10),
